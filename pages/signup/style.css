@@ -1,69 +1,62 @@
         /* Genel ve Mobil Stiller (Mobile-First Yaklaşımı) */
-* {
-    margin: 0;
+*/*Bu sembol, sayfadaki tüm HTML elemanlarını seçer*/ {
+    margin: 0;/*Tarayıcıların varsayılan olarak eklediği tüm dış (margin) ve iç (padding) boşlukları sıfırlar*/
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;/*Bir elemente verdiğiniz width (genişlik) ve height (yükseklik) değerlerinin, o elementin padding 
+    (iç boşluk) ve border (kenarlık) değerlerini de kapsamasını sağlar*/
 }
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #cccccc;
+body {/*Sayfanın ana gövdesini stillendirir*/
+    font-family: 'Poppins', sans-serif;/*Sayfadaki varsayılan yazı tipini belirler*/
+    background-color: #cccccc;/*arka plan rengi*/
     color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex;/*İçindeki elemanları esnek bir kutu (flexbox) düzenine sokar*/
+    flex-direction: column;/*Flexbox içindeki elemanların alt alta (dikey olarak) sıralanmasını sağlar.*/
+    justify-content: center;/*Bu iki kod birlikte çalışarak body içindeki tüm içeriği hem dikeyde hem de yatayda sayfanın tam ortasına hizalar*/
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh;/*body etiketinin yüksekliğinin en az ekranın görünen yüksekliği (vh = viewport height) kadar olmasını zorunlu kılar*/
     padding: 20px;
 }
-
-.page-header {
+.page-header {/*Başlığın mobil ekranda ortalanması ve altında boşluk bırakılması sağlanır*/
     width: 100%;
     margin-bottom: 30px;
 }
-
 .page-header h1 {
     font-size: 2rem;
     font-weight: 600;
     text-align: center; /* Mobil için ortalı */
 }
-
-.signup-container {
+.signup-container {/*Formu saran ana konteyner ve formun kendisi için stil belirler*/
     width: 100%;
-    max-width: 400px;
+    max-width: 400px;/*400 pikselden daha geniş olmaları engellenir*/
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center; /* Form elemanlarını mobil için ortala */
 }
-
 .form-group {
     width: 100%;
     margin-bottom: 15px;
 }
-
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-size: 0.9rem;
     color: #444;
 }
-
 .form-group input {
     width: 100%;
     padding: 12px 20px;
-    border: none;
-    border-radius: 50px;
+    border: none;/*kenarlıksız*/
+    border-radius: 50px;/*yuvarlak köşeli*/
     font-size: 1rem;
 }
-
-.submit-btn {
+/*Bu bölüm, kullanıcının etkileşime gireceği "Üye Ol" butonu ve "Giriş Yap / Anasayfa" buton ve linklerini biçimlendirir*/
+.submit-btn {/*"Üye Ol" butonunu yeşil renkli, yuvarlak köşeli ve modern bir hale getirir*/
     background-color: #24a524;
     color: white;
     border: none;
@@ -71,17 +64,16 @@ form {
     padding: 12px 30px;
     font-size: 1.1rem;
     font-weight: 600;
-    cursor: pointer;
+    cursor: pointer;/*Fare imlecinin butonun üzerine geldiğinde el işaretine dönüşmesini sağlar, bu da tıklanabilir olduğunu belirtir*/
     margin-top: 15px;
     width: 100%;
     max-width: 250px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;/*renk değişiminin aniden değil, 0.3 saniyelik yumuşak bir animasyonla gerçekleşmesini sağlar*/
 }
-
 .submit-btn:hover {
     background-color: #1e841e;
 }
-
+/*sayfanın altındaki "Giriş Yap" ve "Anasayfa" linklerini siyah, yuvarlak köşeli butonlar haline getirir*/
 .page-nav {
     margin-top: 40px;
     display: flex;
@@ -89,7 +81,6 @@ form {
     align-items: center;
     gap: 10px;
 }
-
 .nav-link {
     background-color: #000;
     color: #fff;
@@ -99,39 +90,29 @@ form {
     font-size: 0.9rem;
     text-align: center;
     width: 150px;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;/*hover ile de üzerlerine gelindiğinde opacity (şeffaflık) değerleri düşürülür*/
 }
-
 .nav-link:hover {
     opacity: 0.8;
 }
-
-
 /* Tablet ve Masaüstü için Stiller */
-@media (min-width: 768px) {
+@media (min-width: 768px) {/*sadece ekran genişliği 768 piksel veya daha fazla olduğunda içindeki CSS kodlarının aktif olmasını sağlar*/
     body {
         justify-content: center;
         padding: 40px;
     }
-
     .page-header {
-        position: absolute;
-        top: 40px;
+        position: absolute;/*.page-header ve .page-nav elemanlarını normal sayfa akışından çıkarır ve ekranda belirtilen koordinatlara sabitler*/
+        top: 40px;/*Başlığı ekranın sol üst köşesine yerleştirir*/
         left: 40px;
         margin-bottom: 0;
     }
-
     .page-header h1 {
         text-align: left; /* Masaüstü için sola hizalı */
     }
-
-    /*.signup-container{
-         Formun konumu zaten ortada olduğu için ek ayara gerek yok
-    }*/
-
     .page-nav {
         position: absolute;
-        bottom: 40px;
+        bottom: 40px;/*Navigasyon linklerini ekranın sağ alt köşesine yerleştirir*/
         right: 40px;
         margin-top: 0;
     }
