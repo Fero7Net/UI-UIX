@@ -59,7 +59,7 @@ form {
 /*Bu bölüm, kullanıcının etkileşime gireceği "Üye Ol" butonu ve "Giriş Yap / Anasayfa" buton ve linklerini biçimlendirir*/
 .submit-btn {/*"Üye Ol" butonunu yeşil renkli, yuvarlak köşeli ve modern bir hale getirir*/
     background-color: #24a524;
-    color: white;
+    color: black;
     border: none;
     border-radius: 50px;
     padding: 12px 30px;
