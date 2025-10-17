@@ -1,4 +1,4 @@
-        /* Genel ve Mobil Stiller (Mobile-First Yaklaşımı) */
+/* Genel ve Mobil Stiller (Mobile-First Yaklaşımı) */
 */*Bu sembol, sayfadaki tüm HTML elemanlarını seçer*/ {
     margin: 0;/*Tarayıcıların varsayılan olarak eklediği tüm dış (margin) ve iç (padding) boşlukları sıfırlar*/
     padding: 0;
@@ -36,7 +36,7 @@ form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Form elemanlarını mobil için ortala */
+    align-items: center;/* Form elemanlarını mobil için ortala */
 }
 .form-group {
     width: 100%;
@@ -47,6 +47,7 @@ form {
     margin-bottom: 5px;
     font-size: 0.9rem;
     color: #444;
+    padding-left: 15px;/*içeriği ile sol kenarlığı arasına 15 piksellik bir iç boşluk ekler*/
 }
 .form-group input {
     width: 100%;
@@ -101,15 +102,23 @@ form {
         justify-content: center;
         padding: 40px;
     }
+
     .page-header {
         position: absolute;/*.page-header ve .page-nav elemanlarını normal sayfa akışından çıkarır ve ekranda belirtilen koordinatlara sabitler*/
         top: 40px;/*Başlığı ekranın sol üst köşesine yerleştirir*/
         left: 40px;
         margin-bottom: 0;
+        width: auto;
     }
+
     .page-header h1 {
         text-align: left; /* Masaüstü için sola hizalı */
     }
+    
+    .form-group label {
+        text-align: left;
+    }
+
     .page-nav {
         position: absolute;
         bottom: 40px;/*Navigasyon linklerini ekranın sağ alt köşesine yerleştirir*/
