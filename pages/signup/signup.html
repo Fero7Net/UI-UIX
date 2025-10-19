@@ -11,7 +11,7 @@
         <h1>ÜYE OL</h1>
     </header>
     <main class="signup-container"><!--Sayfanın ana ve benzersiz içeriğini barındırır-->
-        <form action="#" method="post"><!--Kullanıcıdan bilgi almak için kullanılan bir kapsayıcıdır--> <!--'*' Form gönderildiğinde verilerin hangi adrese gideceğini belirtir--> <!--'post' Verilerin sunucuya gizli bir şekilde gönderileceğini belirtir-->
+        <form id="signupForm"><!--Kullanıcıdan bilgi almak için kullanılan bir kapsayıcıdır--> <!--'*' Form gönderildiğinde verilerin hangi adrese gideceğini belirtir--> <!--'post' Verilerin sunucuya gizli bir şekilde gönderileceğini belirtir-->
             <div class="form-group"><!--Her bir etiket (label) ve giriş alanını (input) bir grup olarak sarmalar-->
                 <label for="ad">Ad</label><!--id="ad" olan input elemanına bağlı olduğunu belirtir. Bu sayede etikete tıklandığında ilgili giriş alanı aktif olur-->
                 <input type="text" id="ad" name="ad" required><!--id: Etiketi (label) bu alana bağlamak için kullanılan benzersiz bir kimliktir--> <!--name: Form gönderildiğinde sunucuya gidecek verinin adıdır--><!--required: Bu alanın doldurulmasının zorunlu olduğunu belirtir-->
@@ -36,8 +36,10 @@
         </form>
     </main>
     <nav class="page-nav"><!--Sayfadaki ana navigasyon linklerini içeren bölümdür-->
-        <a href="#" class="nav-link">Giriş Yap</a><!--<a>: Bir link oluşturur-->
+        <a href="../login/login.html" class="nav-link">Giriş Yap</a><!--<a>: Bir link oluşturur-->
         <a href="#" class="nav-link">Anasayfa</a><!--href="#": Linkin nereye gideceğini belirtir-->
     </nav>
+    <p id="message" style="text-align:center; margin-top:15px;"></p>
+    <script src="signup.js"></script>
 </body>
 </html>

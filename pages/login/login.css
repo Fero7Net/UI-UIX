@@ -60,7 +60,7 @@ form {
     color: black;
     border: none;
     border-radius: 50px;
-    padding: 12px 30px;
+    padding: 12px 60px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
@@ -69,16 +69,6 @@ form {
 }
 .submit-btn:hover {
     background-color: #1e841e;
-}
-/* Giriş sayfasındaki butonu özelleştirme */
-.form-container .submit-btn {
-     padding-left: 60px;
-     padding-right: 60px;
-}
-/* Üye ol sayfasındaki butonu özelleştirme */
-.signup-container .submit-btn {
-    width: 100%;
-    max-width: 250px;
 }
 .page-nav {
     margin-top: 40px;
