@@ -23,7 +23,15 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
         if (result.success) {
             messageEl.style.color = "green";
             messageEl.textContent = result.message;
-            window.location.href = "anasayfa.html";
+
+            // Rol bazlı yönlendirme
+            if (result.redirect) {
+                window.location.href = result.redirect;
+            } else {
+                // Eğer redirect gelmezse fallback
+                window.location.href = "anasayfa.html";
+            }
+
         } else {
             messageEl.style.color = "red";
             messageEl.textContent = result.message;
@@ -31,5 +39,6 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     } catch (err) {
         messageEl.style.color = "red";
         messageEl.textContent = "Sunucu hatası veya bağlantı sorunu.";
+        console.error(err);
     }
 });
