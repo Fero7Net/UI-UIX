@@ -1,0 +1,128 @@
+/* DOSYA ADI: Test/profil/profil.css (GÜNCELLENMİŞ) */
+/* AÇIKLAMA: Profil sayfasının (profil.php) stillerini belirler. */
+
+/* === GENEL SAYFA AYARLARI (Ana Stilden Alındı) === */
+body {
+    background-color: #cccccc; /* Sayfa arka plan rengi (Ana stille aynı) */
+    font-family: 'Poppins', sans-serif; /* Ana stille aynı font */
+    margin: 0;
+    padding: 0;
+
+    /* Footer'ın aşağıda kalması için ana sayfa yapısı */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Profil kartının içinde olduğu ana konteyner */
+.profil-container {
+    /* Navbar'ın 70px yüksekliğini ve ekstra boşluğu hesaba kat */
+    padding: 40px 20px;
+    padding-top: 110px; /* 70px navbar + 40px boşluk */
+    box-sizing: border-box;
+
+    /* Sayfanın geri kalanını doldur (flex-grow: 1) */
+    flex-grow: 1;
+}
+
+/* Bilgilerin gösterildiği beyaz kart */
+.profil-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Ana .content stiline benzer */
+    width: 100%;
+    max-width: 600px;
+    padding: 25px 30px;
+
+    /* Konteyner içinde ortala */
+    margin: 0 auto;
+}
+
+.profil-card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.75rem;
+    color: #2c3e50; /* Ana başlıklarla aynı renk */
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* === BİLGİ LİSTESİ === */
+.bilgi-listesi {
+    list-style: none; /* Liste başındaki noktaları kaldır */
+    padding: 0;
+    margin: 0;
+}
+
+.bilgi-listesi li {
+    display: flex;
+    justify-content: space-between; /* Etiket (strong) ve veriyi (span) ayır */
+    padding: 15px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #f0f0f0; /* Her satır arasına ince çizgi */
+}
+
+.bilgi-listesi li:last-child {
+    border-bottom: none; /* Son elemanın alt çizgisini kaldır */
+}
+
+/* "Ad:", "Soyad:" gibi etiketler */
+.bilgi-listesi li strong {
+    color: #555;
+    margin-right: 15px;
+}
+
+/* Kullanıcının asıl verisi (e-posta vb.) */
+.bilgi-listesi li span {
+    color: #333;
+    font-weight: 500;
+    word-break: break-all; /* E-posta uzunsa satırı kırmasını sağla */
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #34495e; /* Koyu mavi-gri arka plan */
+    color: #ecf0f1; /* Açık renk yazı */
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* Not: body'deki flex ayarları sayesinde footer en altta kalır */
+}
+
+/* === MOBİL RESPONSIVE === */
+@media (max-width: 768px) {
+    .profil-container {
+        padding: 20px 15px;
+        padding-top: 100px; /* 70px navbar + 30px boşluk */
+    }
+
+    .profil-card {
+        padding: 20px 15px;
+    }
+
+    .profil-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .bilgi-listesi li {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .bilgi-listesi li strong {
+        margin-right: 0;
+        font-size: 0.9rem;
+    }
+
+    .bilgi-listesi li span {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 15px 10px;
+    }
+}

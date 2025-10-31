@@ -1,0 +1,264 @@
+/* Temel Sıfırlamalar ve Sayfa Ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+/* Ana Konteyner (Sidebar ve İçerik) */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (Sol Menü) */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Koyu Mavi */
+    color: #ecf0f1;
+    padding: 25px 20px;
+    flex-shrink: 0; /* Küçülmeyi engelle */
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #ecf0f1;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav a i {
+    margin-right: 12px;
+    width: 20px; /* İkonların hizalı durması için */
+    text-align: center;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background-color: #34495e; /* Vurgu Rengi */
+}
+
+/* Ana İçerik (Sağ Taraf) */
+.main-content {
+    flex: 1; /* Kalan tüm alanı kapla */
+    padding: 30px;
+    overflow-y: auto; /* Gerekirse kaydırma çubuğu */
+}
+
+/* GÜNCELLENDİ: Header'ı flex container yap */
+.main-content header {
+    display: flex;
+    justify-content: space-between; /* Öğeleri iki uca yasla */
+    align-items: center; /* Dikeyde ortala */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.main-content h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+}
+
+.main-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Header buton grubu */
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Butonlar arası boşluk */
+    margin-left: auto; /* Sağ tarafa itme */
+}
+
+/* Ortak buton stili */
+.btn-home,
+.btn-logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    height: 42px;
+}
+
+/* Anasayfa Butonu */
+.btn-home {
+    background-color: #7f8c8d;
+}
+
+.btn-home:hover {
+    background-color: #707b7c;
+}
+
+/* Çıkış Butonu */
+.btn-logout {
+    background-color: #e74c3c;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+}
+
+/* Mobil görünümde sadece ikonlar */
+@media (max-width: 420px) {
+    .btn-home span,
+    .btn-logout span {
+        display: none;
+    }
+
+    .btn-home,
+    .btn-logout {
+        padding: 10px 12px;
+        height: 40px;
+    }
+
+    .header-buttons {
+        gap: 8px;
+    }
+}
+
+
+/* Buton Konteyneri (Grid Yapısı) */
+.dashboard-buttons {
+    display: grid;
+    /* Masaüstünde 2 sütunlu grid */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Butonlar arası boşluk */
+}
+
+/* Butonların Ortak Stili */
+.btn {
+    display: flex;
+    flex-direction: column; /* İkon ve yazıyı alt alta getir */
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem; 
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px); /* Hafif yukarı kalkma efekti */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn i {
+    font-size: 1.8rem; 
+    margin-bottom: 12px; 
+}
+
+/* Buton Renkleri */
+.btn-add-user {
+    background-color: #3498db; /* Mavi */
+}
+
+.btn-add-product {
+    background-color: #2ecc71; /* Yeşil */
+}
+
+.btn-edit-user {
+    background-color: #f39c12; /* Turuncu (Düzenleme) */
+}
+
+.btn-edit-product {
+    background-color: #e74c3c; /* Kırmızı (Alternatif Düzenleme/Farklı Eylem) */
+}
+
+
+/* Responsive (Duyarlı) Tasarım */
+
+/* Tablet ve küçük masaüstü */
+@media (max-width: 992px) {
+    .dashboard-buttons {
+        /* Butonları 1 sütuna (alt alta) düşür */
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobil Cihazlar */
+@media (max-width: 768px) {
+    .container {
+        /* Sidebar ve içeriği alt alta sırala */
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto; /* İçeriğe göre yükseklik */
+        border-bottom: 2px solid #34495e;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .main-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 20px 15px; 
+        font-size: 1rem;
+    }
+}
+
+/* YENİ EKLENDİ: Çok Küçük Mobil Cihazlar (Responsive İyileştirme) */
+@media (max-width: 420px) {
+
+    .main-content h1 {
+        font-size: 1.6rem; /* Başlığı biraz daha küçült */
+    }
+
+    .btn-logout span {
+        display: none; /* "Çıkış Yap" yazısını gizle */
+    }
+
+    .btn-logout i {
+        margin-right: 0; /* İkonun sağ boşluğunu sıfırla */
+    }
+
+    .btn-logout {
+        padding: 10px 12px; /* Butonu daha kare hale getir */
+    }
+}

@@ -1,0 +1,171 @@
+:root {
+    --primary-green: #28a745;
+    --primary-green-hover: #218838;
+    --secondary-gray: #6c757d;
+    --secondary-gray-hover: #5a6268;
+    --card-bg: #ffffff;
+    --page-bg: #f4f7f6;
+    --text-dark: #333333;
+    --text-light: #555555;
+    --border-color: #eeeeee;
+    --header-bg: #f9f9f9;
+    --action-edit: #007bff;
+    --action-delete: #dc3545;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--page-bg);
+    color: var(--text-dark);
+    padding: 20px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.user-management-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h1 { font-size: 20px; font-weight: 600; margin-right: auto; }
+
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+/* Butonlar */
+.btn-green { background-color: var(--primary-green); }
+.btn-green:hover { background-color: var(--primary-green-hover); }
+
+.btn-secondary { background-color: var(--secondary-gray); }
+.btn-secondary:hover { background-color: var(--secondary-gray-hover); }
+
+.table-wrapper { overflow-x: auto; }
+
+.user-table { width: 100%; border-collapse: collapse; }
+
+.user-table th, .user-table td { padding: 15px 20px; text-align: left; vertical-align: middle; }
+
+.user-table thead { background-color: var(--header-bg); }
+
+.user-table th {
+    font-size: 12px; color: var(--text-light); text-transform: uppercase;
+    font-weight: 600; letter-spacing: 0.5px;
+}
+
+.user-table tbody tr { border-bottom: 1px solid var(--border-color); }
+.user-table tbody tr:last-child { border-bottom: none; }
+
+.user-table td { font-size: 14px; color: var(--text-dark); }
+
+.btn-action { font-weight: 500; margin-right: 10px; font-size: 14px; text-decoration: none; }
+.btn-action.edit { color: var(--action-edit); }
+.btn-action.delete { color: var(--action-delete); }
+
+/* --- Alert Mesajları --- */
+.alert {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* --- Badge Stilleri --- */
+.badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-admin {
+    background-color: #dc3545;
+    color: white;
+}
+
+.badge-user {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* --- Buton Boyutları --- */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .card-header { flex-direction: column; align-items: stretch; }
+    .card-header h1 { margin-right: 0; text-align: left; }
+    .btn-green, .btn-secondary { width: 100%; text-align: center; }
+
+    .user-table thead { display: none; }
+    .user-table tr {
+        display: block; border: none; border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 15px; background: var(--card-bg);
+    }
+    .user-table td {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 12px 15px; text-align: right; border-bottom: 1px solid var(--border-color);
+    }
+    .user-table td:last-child { border-bottom: none; }
+    .user-table td::before {
+        content: attr(data-label); font-weight: 600; font-size: 13px;
+        color: var(--text-dark); padding-right: 10px; text-align: left;
+    }
+    .user-table td[data-label="İŞLEMLER"] { justify-content: flex-start; }
+    .user-table td[data-label="İŞLEMLER"]::before { display: none; }
+}

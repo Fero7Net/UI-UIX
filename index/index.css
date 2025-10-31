@@ -1,0 +1,413 @@
+/* === GENEL SAYFA AYARLARI === */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #cccccc;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === ÇIKIŞ MESAJI STİLLERİ === */
+.logout-message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  animation: slideDown 0.5s ease-out;
+}
+
+.logout-alert {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.logout-alert i {
+  font-size: 1.2rem;
+}
+
+.logout-alert span {
+  flex: 1;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* === EKSİK SINIFLAR === */
+.anasayfa-kitap-yazar {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.25rem 0;
+}
+
+.anasayfa-kitap-kategori {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0.25rem 0;
+  font-style: italic;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* NAVBAR’ın altında içerik boşluğu */
+.page-content {
+  flex-grow: 1;
+  padding-top: 70px; /* Navbar boşluğu, kalsın */
+  text-align: center;
+  background: #cccccc;
+  margin-top: -90px;
+}
+
+/* === SLIDER === */
+.slider-wrapper {
+  /* Slider'ın pozisyonu değişmedi */
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: #cccccc;
+}
+
+.slider-wrapper h2 {
+  font-size: 1.6rem;
+  color: #333;
+  margin: 1rem 1rem;
+  border-left: 4px solid #3498db;
+  padding-left: 0.5rem;
+}
+
+/* --- Slider container (butonlu yapı) --- */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #cccccc;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background-color: #cccccc;
+  border-radius: 0;
+}
+
+/* === SLIDER BUTONLARI === */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(52, 152, 219, 0.8);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+  background-color: rgba(41, 128, 185, 0.9);
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+/* === ANA İÇERİK === */
+.content {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  /* margin-top: -60px; */ /* Kaldırıldı */
+  position: relative;
+  z-index: 1;
+}
+
+.content h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+/* === FOOTER === */
+.site-footer {
+  flex-shrink: 0;
+  background-color: #2c3e50;
+  color: #bdc3c7;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .slider-wrapper h2 {
+    font-size: 1.3rem;
+    margin: 1rem;
+  }
+
+  .slide {
+    height: 250px;
+  }
+
+  .slider-btn {
+    padding: 8px 10px;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    padding: 1.2rem;
+    /* margin-top: -40px; */ /* Kaldırıldı */
+  }
+
+  .content h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* === POPÜLER KİTAPLAR (ÇAKIŞMAYAN SINIFLAR) === */
+.anasayfa-populer-bolum {
+  width: 100%;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  background-color: #cccccc;
+}
+
+.anasayfa-populer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.anasayfa-populer-bolum h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.anasayfa-kitap-izgara {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.anasayfa-kitap-kart {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.anasayfa-kitap-resim {
+  width: 100%;
+  height: 250px;
+  background-color: #f8f8f8; /* Resim tam sığmazsa boşlukların rengi */
+}
+
+.anasayfa-kitap-resim img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔹 DEĞİŞİKLİK: 'cover' yerine 'contain' yapıldı */
+  display: block;
+}
+
+.anasayfa-kitap-detay {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.anasayfa-kitap-detay h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.anasayfa-kitap-fiyat {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3498db;
+  margin: 0 0 1rem 0;
+  margin-top: auto;
+}
+
+.anasayfa-kitap-aksiyon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* === ADET KONTROLÜ STİLLERİ === */
+.anasayfa-adet-kontrol {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Dış çerçeve için yuvarlaklık */
+  overflow: hidden; /* Buton köşelerini gizle */
+}
+
+.anasayfa-adet-kontrol button {
+  background-color: #f8f8f8; /* Hafif gri buton arkaplanı */
+  border: none;
+  color: #555; /* Biraz daha koyu gri ikon/yazı */
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.1rem; /* Buton içindeki + ve - biraz daha belirgin */
+  line-height: 1;
+  transition: background-color 0.2s;
+}
+
+.anasayfa-adet-kontrol button:hover {
+  background-color: #e8e8e8; /* Hover'da biraz daha koyu gri */
+}
+
+.anasayfa-adet-kontrol button:active {
+  background-color: #ddd; /* Tıklama anında */
+}
+
+.anasayfa-adet-kontrol .anasayfa-kitap-adet {
+  width: 100%; /* Ortadaki alan genişlesin */
+  border: none;
+  border-left: 1px solid #ccc; /* Butonlardan ayır */
+  border-right: 1px solid #ccc; /* Butonlardan ayır */
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500; /* Rakam biraz daha okunaklı */
+  color: #333;
+  /* Tarayıcı oklarını gizle */
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.anasayfa-adet-kontrol .anasayfa-kitap-adet::-webkit-outer-spin-button,
+.anasayfa-adet-kontrol .anasayfa-kitap-adet::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* === ADET KONTROLÜ STİLLERİ SONU === */
+
+
+.anasayfa-sepete-ekle-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.anasayfa-sepete-ekle-btn:hover {
+  background-color: #2980b9;
+}
+
+/* === POPÜLER KİTAPLAR (RESPONSIVE) === */
+@media (max-width: 992px) {
+  .anasayfa-kitap-izgara {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .anasayfa-kitap-izgara {
+    grid-template-columns: 1fr;
+  }
+  .anasayfa-populer-bolum h2 {
+    text-align: center;
+  }
+  /* Mobilde butonları ve inputu biraz küçültelim */
+  .anasayfa-adet-kontrol button {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+  }
+   .anasayfa-adet-kontrol .anasayfa-kitap-adet{
+     padding: 0.4rem;
+     font-size: 0.95rem;
+   }
+}

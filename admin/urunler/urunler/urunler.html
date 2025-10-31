@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Listesi</title>
+    <link rel="stylesheet" href="urunler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="main-header">
+            <h1>Ürün Listesi</h1>
+        </header>
+
+        <section class="controls">
+            <form class="category-form">
+                <input type="text" placeholder="Eklenecek Kategori Adı">
+                <button type="submit" class="btn btn-light">Kategori Ekle</button>
+            </form>
+            <div class="page-actions">
+                <button onclick="location.href='../../adminindex.html'" class="btn btn-secondary">Anasayfaya Dön</button>
+                <button onclick="location.href='../urunekle/urunekle.html'" class="btn btn-primary">Yeni Ürün Ekle</button>
+            </div>
+        </section>
+
+        <section class="product-list">
+            <div class="product-table">
+                <div class="table-header">
+                    <div class="header-cell">Ürün Resmi</div>
+                    <div class="header-cell">Ürün Adı</div>
+                    <div class="header-cell">Kategori</div>
+                    <div class="header-cell">Fiyat</div>
+                    <div class="header-cell">İşlemler</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell" data-label="Ürün Resmi">
+                        <img src="https://via.placeholder.com/80x40?text=Akıllı+Telefon" alt="Akıllı Telefon" class="product-image">
+                    </div>
+                    <div class="table-cell" data-label="Ürün Adı">Akıllı Telefon Model X</div>
+                    <div class="table-cell" data-label="Kategori">Elektronik</div>
+                    <div class="table-cell" data-label="Fiyat">15.000 TL</div>
+                    <div class="table-cell" data-label="İşlemler">
+                        <button onclick="location.href='../urunduzenle/urunduzenle.html'" class="btn-icon btn-edit" aria-label="Düzenle">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="btn-icon btn-delete" aria-label="Sil">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                </div>
+        </section>
+    </div>
+
+</body>
+</html>

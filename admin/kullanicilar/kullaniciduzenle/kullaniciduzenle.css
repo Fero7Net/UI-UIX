@@ -1,0 +1,233 @@
+/* 
+    DOSYA: kullaniciduzenle.css
+    AÇIKLAMA: Kullanıcı düzenleme sayfasının stil dosyası
+*/
+
+/* === GENEL AYARLAR VE SIFIRLAMA === */
+/* Tüm HTML elementlerini ve pseudo-elementleri seç */
+*,
+*::before, /* Element'in öncesi (ör: input::before) */
+*::after { /* Element'in sonrası (ör: input::after) */
+    box-sizing: border-box; /* Padding ve border'i genişliğe dahil et */
+    margin: 0; /* Dış boşlukları sıfırla */
+    padding: 0; /* İç boşlukları sıfırla */
+}
+
+/* === BODY AYARLARI === */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Sistem fontlarını kullan */
+    background-color: #f4f7fa; /* Arka plan rengi (açık mavi-gri) */
+    color: #333; /* Yazı rengi (koyu gri) */
+    padding: 2rem; /* Sayfa kenarlarından 2rem boşluk */
+    display: flex; /* Flexbox kullan */
+    justify-content: center; /* İçeriği yatayda ortala */
+    align-items: center; /* İçeriği dikeyde ortala */
+    min-height: 100vh; /* Minimum yüksekliği ekran boyutuna ayarla */
+}
+
+/* === ANA FORM KONTEYNERİ === */
+.form-container {
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Gölge efekti */
+    width: 100%; /* Genişliği tam yap */
+    max-width: 900px; /* Maksimum genişlik 900px */
+    overflow: hidden; /* İçerik taşmasını engelle */
+}
+
+/* === BAŞLIK ALANI === */
+.form-header {
+    display: flex; /* Flexbox kullan */
+    justify-content: space-between; /* Başlığı sol, butonları sağ tarafa yerleştir */
+    align-items: center; /* Dikeyde ortala */
+    padding: 1.5rem 2rem; /* İçerden boşluklar */
+    border-bottom: 1px solid #e9ecef; /* Alt çizgi (açık gri) */
+    flex-wrap: wrap; /* Küçük ekranlarda alt satıra kaydır */
+    gap: 1rem; /* Başlık ve butonlar arası boşluk */
+}
+
+/* Başlık yazısı stili */
+.form-header h2 {
+    margin: 0; /* Margin sıfır */
+    font-size: 1.75rem; /* Font boyutu */
+    color: #212529; /* Yazı rengi (koyu gri) */
+}
+
+/* Başlık butonları (Anasayfaya Dön, Listeye Geri Dön) */
+.header-buttons {
+    display: flex; /* Flexbox kullan */
+    gap: 0.75rem; /* Butonlar arası boşluk */
+    flex-wrap: wrap; /* Küçük ekranlarda alt satıra kaydır */
+}
+
+/* === FORM İÇERİĞİ === */
+form {
+    padding: 2rem; /* İçerden 2rem boşluk */
+}
+
+/* Form grubu (her input alanı için) */
+.form-group {
+    margin-bottom: 1.5rem; /* Altından 1.5rem boşluk */
+}
+
+/* Label (etiket) stili */
+.form-group label {
+    display: block; /* Block element yap (alt satıra geç) */
+    font-weight: 600; /* Kalın yazı */
+    margin-bottom: 0.5rem; /* Altından 0.5rem boşluk */
+    color: #495057; /* Yazı rengi (orta koyu gri) */
+}
+
+/* Input alanları stili (text, email, password ve select) */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%; /* Genişliği tam yap */
+    padding: 0.75rem 1rem; /* İçerden boşluklar */
+    border: 1px solid #ced4da; /* Çerçeve (açık gri) */
+    border-radius: 4px; /* Köşeleri yuvarlat */
+    font-size: 1rem; /* Font boyutu */
+    line-height: 1.5; /* Satır yüksekliği */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Renk değişimine yumuşak geçiş */
+}
+
+/* Placeholder (ipucu metin) rengi */
+.form-group input::placeholder {
+    color: #adb5bd; /* Açık gri */
+}
+
+/* Focus durumu (input'a tıklandığında veya seçildiğinde) */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #80bdff; /* Çerçeve rengi (açık mavi) */
+    outline: none; /* Tarayıcının varsayılan çerçevesini kaldır */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Mavi gölge efekti */
+}
+
+/* === ALERT MESAJLARI === */
+/* Genel alert stili (başarı/hata mesajları için) */
+.alert {
+    padding: 12px 16px; /* İçerden boşluklar */
+    margin-bottom: 20px; /* Altından 20px boşluk */
+    border-radius: 5px; /* Köşeleri yuvarlat */
+    font-weight: 500; /* Orta kalınlıkta yazı */
+}
+
+/* Başarı mesajı stili (yeşil) */
+.alert-success {
+    background-color: #d4edda; /* Arka plan (açık yeşil) */
+    color: #155724; /* Yazı rengi (koyu yeşil) */
+    border: 1px solid #c3e6cb; /* Çerçeve (yeşil) */
+}
+
+/* Hata mesajı stili (kırmızı) */
+.alert-error {
+    background-color: #f8d7da; /* Arka plan (açık kırmızı) */
+    color: #721c24; /* Yazı rengi (koyu kırmızı) */
+    border: 1px solid #f5c6cb; /* Çerçeve (kırmızı) */
+}
+
+/* === FORM ALT KISIM (BUTONLAR) === */
+.form-footer,
+.form-actions {
+    display: flex; /* Flexbox kullan */
+    gap: 0.75rem; /* Butonlar arası boşluk */
+    padding: 1.5rem 2rem; /* İçerden boşluklar */
+    background-color: #f9f9f9; /* Arka plan (açık gri) */
+    border-top: 1px solid #e9ecef; /* Üst çizgi */
+    flex-wrap: wrap; /* Küçük ekranlarda alt satıra kaydır */
+}
+
+/* === GENEL BUTON STİLLERİ === */
+.btn {
+    display: inline-flex; /* Flex kullan ve satır içi kal */
+    align-items: center; /* İçeriği dikeyde ortala */
+    justify-content: center; /* İçeriği yatayda ortala */
+    gap: 0.5rem; /* İkon ve yazı arası boşluk */
+    padding: 0.6rem 1.2rem; /* İçerden boşluklar */
+    font-size: 0.95rem; /* Font boyutu */
+    font-weight: 500; /* Orta kalınlıkta yazı */
+    text-decoration: none; /* Altı çizili değil */
+    border: none; /* Çerçeve yok */
+    border-radius: 5px; /* Köşeleri yuvarlat */
+    cursor: pointer; /* Fare üzerine gelince el işareti */
+    transition: background-color 0.2s ease, opacity 0.2s ease; /* Renk değişimine yumuşak geçiş */
+    white-space: nowrap; /* Yazıyı bölme (tek satırda tut) */
+}
+
+/* Butona fare ile gelindiğinde (hover) */
+.btn:hover {
+    opacity: 0.85; /* Biraz saydam yap */
+}
+
+/* === BUTON RENKLERİ === */
+.btn-primary {
+    background-color: #007bff; /* Mavi (Listeye Dön butonu) */
+    color: #ffffff; /* Beyaz yazı */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gri (Anasayfaya Dön butonu) */
+    color: #ffffff; /* Beyaz yazı */
+}
+
+.btn-success {
+    background-color: #28a745; /* Yeşil (Güncelle butonu) */
+    color: #ffffff; /* Beyaz yazı */
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Sarı (İptal butonu) */
+    color: #ffffff; /* Beyaz yazı */
+}
+
+/* === HOVER EFEKTLERİ (Butona gelince rengi değiştir) === */
+.btn-primary:hover { background-color: #0069d9; } /* Daha koyu mavi */
+.btn-secondary:hover { background-color: #5a6268; } /* Daha koyu gri */
+.btn-success:hover { background-color: #218838; } /* Daha koyu yeşil */
+.btn-warning:hover { background-color: #e0a800; } /* Daha koyu sarı */
+
+/* === RESPONSIVE TASARIM (Mobil Uyumlu) === */
+/* Ekran genişliği 768px'ten küçükse bu stiller uygulanır */
+@media (max-width: 768px) {
+    /* Body'nin padding'ini küçült */
+    body {
+        padding: 0.5rem; /* Kenarlardan 0.5rem boşluk */
+    }
+
+    /* Form konteynerini mobil için düzenle */
+    .form-container {
+        border-radius: 0; /* Köşeleri düz yap */
+        box-shadow: none; /* Gölge efekti yok */
+    }
+
+    /* Başlık bölümünü dikey sırala */
+    .form-header {
+        flex-direction: column; /* Alt alta sırala */
+        align-items: flex-start; /* Sıfıra hizala */
+    }
+
+    /* Butonları alt alta sırala */
+    .header-buttons {
+        width: 100%; /* Genişliği tam yap */
+        flex-direction: column; /* Alt alta sırala */
+    }
+
+    /* Tüm butonları tam genişlik yap */
+    .btn {
+        width: 100%; /* Genişliği tam yap */
+        text-align: center; /* Yazıyı ortala */
+    }
+
+    /* Footer butonlarını alt alta sırala */
+    .form-footer,
+    .form-actions {
+        flex-direction: column; /* Alt alta sırala */
+    }
+
+    /* Form, header ve footer padding'ini küçült */
+    form, .form-header, .form-footer, .form-actions {
+        padding: 1.5rem; /* İçerden 1.5rem boşluk */
+    }
+}

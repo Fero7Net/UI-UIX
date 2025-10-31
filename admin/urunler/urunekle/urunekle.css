@@ -1,0 +1,266 @@
+/* Temel Ayarlar ve Sayfa Arka Planı */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Üstten başlaması için */
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Ana Form Konteyneri */
+.container {
+    width: 100%;
+    max-width: 800px; /* Formun maksimum genişliği */
+}
+
+.form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Köşelerin düzgün görünmesi için */
+}
+
+/* Form Başlığı (Header) */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap; /* Mobil için */
+}
+
+.form-header h1 {
+    font-size: 1.75rem; /* 28px */
+    color: #222;
+    margin: 0;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Genel Buton Stilleri */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem; /* 15px */
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
+    white-space: nowrap; /* Buton metni alta kaymasın */
+}
+
+/* Navigasyon Butonları (Gri) */
+.btn-nav {
+    background-color: #6c757d; /* Resimdeki gri renk */
+    color: white;
+}
+
+.btn-nav:hover {
+    background-color: #5a6268;
+}
+
+/* Ana Form Alanı */
+.product-form {
+    padding: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Input ve Select Kutuları */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Resim Yükleme Alanı */
+.image-upload-wrapper {
+    display: flex;
+    flex-direction: column; /* GÜNCELLENDİ: Öğeleri dikey hizala */
+    align-items: flex-start; /* GÜNCELLENDİ: Öğeleri sola hizala */
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.file-input {
+    display: none; /* Gerçek 'file' input'u gizle */
+}
+
+/* "Resim Seç" butonu (label etiketi) */
+.btn-secondary {
+    background-color: #e9ecef; /* Açık gri */
+    color: #333;
+    border: 1px solid #ced4da;
+}
+
+.btn-secondary:hover {
+    background-color: #dee2e6;
+}
+
+/* Resim Önizleme Kutusu */
+.image-preview {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    overflow: hidden; /* Resim taşarsa gizle */
+}
+
+.preview-text {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmi kutuya sığdır */
+}
+
+/* Form Alt Butonları (İptal, Kaydet) */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.btn-primary {
+    background-color: #0d6efd; /* Resimdeki mavi renk */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-cancel {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.btn-cancel:hover {
+    background-color: #e2e6ea;
+}
+
+/* --- Alert Mesajları --- */
+.alert {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* --- Form Text --- */
+.form-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+/* ---------------- */
+/* Responsive Tasarım */
+/* ---------------- */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Mobilde kenar boşluğunu azalt */
+    }
+
+    .form-header {
+        flex-direction: column; /* Başlık ve butonları alt alta getir */
+        align-items: flex-start; /* Sola hizala */
+        gap: 15px;
+    }
+
+    .header-buttons {
+        width: 100%;
+        flex-direction: column; /* Navigasyon butonlarını alt alta */
+    }
+
+    .btn {
+        width: 100%; /* Butonlar tam genişlik kaplasın */
+        justify-content: center; /* İkon ve metni ortala */
+    }
+
+    .form-actions {
+        flex-direction: column-reverse; /* "Kaydet" butonu üste gelsin */
+        width: 100%;
+    }
+    
+    /* .image-upload-wrapper kuralı kaldırıldı çünkü artık temel stilde (yukarıda) tanımlı */
+
+    .image-upload-wrapper .btn-secondary {
+        width: auto; /* "Resim Seç" butonu tam genişlik olmasın */
+    }
+    
+    .image-preview {
+        width: 100%; /* Önizleme alanı tam genişlik */
+        height: 200px; /* Yüksekliğini arttır */
+    }
+}

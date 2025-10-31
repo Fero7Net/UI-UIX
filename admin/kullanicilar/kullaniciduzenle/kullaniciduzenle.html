@@ -1,0 +1,79 @@
+<!-- FRONTEND: Kullanıcı düzenleme -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcıyı Düzenle</title>
+    
+    <link rel="stylesheet" href="kullaniciduzenle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Ana form konteyneri -->
+    <div class="form-container">
+        <!-- Başlık bölümü -->
+        <div class="form-header">
+            <h2>Kullanıcıyı Düzenle</h2> <!-- Sayfa başlığı -->
+            <!-- Başlık kısmındaki butonlar -->
+            <div class="header-buttons">
+                <!-- Admin anasayfaya dön butonu -->
+                <a href="../../adminindex.html" class="btn btn-secondary">
+                    <i class="fas fa-home"></i> Anasayfaya Dön <!-- Ev ikonu ve yazı -->
+                </a>
+                <!-- Kullanıcı listesine geri dön butonu -->
+                <a href="../kullanicilar/kullanicilar.html" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Listeye Geri Dön <!-- Geri ok ikonu ve yazı -->
+                </a>
+            </div>
+        </div>
+
+        <!-- HTML Form (POST metodu ile veri gönderir) -->
+        <form action="#" method="POST">
+            <!-- Form içeriği alanı -->
+            <div class="form-body">
+                <!-- Ad input alanı -->
+                <div class="form-group">
+                    <label for="ad">Ad</label> <!-- Etiket (label) -->
+                    <input type="text" id="ad" name="ad" class="form-control" placeholder="Kullanıcının adını girin"> <!-- Metin input -->
+                </div>
+
+                <!-- Soyad input alanı -->
+                <div class="form-group">
+                    <label for="soyad">Soyad</label> <!-- Etiket -->
+                    <input type="text" id="soyad" name="soyad" class="form-control" placeholder="Kullanıcının soyadını girin"> <!-- Metin input -->
+                </div>
+
+                <!-- Email input alanı -->
+                <div class="form-group">
+                    <label for="email">E-posta</label> <!-- Etiket -->
+                    <input type="email" id="email" name="email" class="form-control" placeholder="kullanici@example.com"> <!-- Email input -->
+                </div>
+
+                <!-- Şifre input alanı (isteğe bağlı) -->
+                <div class="form-group">
+                    <label for="sifre">Yeni Şifre (İsteğe bağlı)</label> <!-- Etiket -->
+                    <input type="password" id="sifre" name="sifre" class="form-control" placeholder="Değiştirmek istemiyorsanız boş bırakın"> <!-- Şifre input -->
+                </div>
+            </div>
+
+            <!-- Form alt kısmı (butonlar) -->
+            <div class="form-footer">
+                <!-- Güncelle butonu (formu gönderir) -->
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-check"></i> Güncelle <!-- Onay işareti ikonu -->
+                </button>
+                <!-- İptal butonu (sayfayı kapatır) -->
+                <button type="button" class="btn btn-warning" onclick="window.location.href='../kullanicilar/kullanicilar.html'">
+                    <i class="fas fa-times"></i> İptal <!-- Çarpı ikonu -->
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript dosyasını dahil et -->
+    <script src="kullaniciduzenle.js"></script>
+</body>
+</html>

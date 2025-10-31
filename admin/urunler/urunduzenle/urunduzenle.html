@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Düzenleme Formu</title>
+    <link rel="stylesheet" href="urunduzenle.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <form action="#" method="post">
+            
+            <div class="form-group">
+                <label for="product-name">Ürün Adı</label>
+                <input type="text" id="product-name" name="product-name" value="Akıllı Telefon Model X">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Kategori</label>
+                <select id="category" name="category">
+                    <option value="elektronik" selected>Elektronik</option>
+                    <option value="giyim">Giyim</option>
+                    <option value="ev-yasam">Ev & Yaşam</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Fiyat</label>
+                <input type="text" id="price" name="price" value="15.000 TL">
+            </div>
+
+            <div class="form-group">
+                <label>Ürün Resmi</label>
+                
+                <div class="image-section">
+                    <div class="image-preview">
+                        <img src="https://via.placeholder.com/150" alt="Mevcut Ürün Resmi">
+                        <span>Mevcut Ürün Resmi</span>
+                    </div>
+
+                    <div class="file-upload-area">
+                        <label for="product-image" class="file-upload-label">Mevcut resmi değiştirmek için yeni bir dosya seçin:</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="product-image" name="product-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+                <button onclick="location.href='../urunler/urunler.html'" type="button" class="btn btn-secondary">İptal</button>
+            </div>
+
+        </form>
+
+        <div class="form-footer">
+            <a href="../../adminindex.html">Anasayfaya Dön</a>
+        </div>
+    </div>
+
+</body>
+</html>

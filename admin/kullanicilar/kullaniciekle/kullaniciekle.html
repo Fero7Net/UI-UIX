@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Kullanıcı Ekle</title>
+    <link rel="stylesheet" href="kullaniciekle.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <header class="form-header">
+            <h1>Yeni Kullanıcı Ekle</h1>
+            <div class="header-buttons">
+                <a href="../../adminindex.html" class="btn btn-secondary">
+                    &#8962; Anasayfaya Dön
+                </a>
+                <a href="../kullanicilar/kullanicilar.html" class="btn btn-primary">
+                    &larr; Listeye Geri Dön
+                </a>
+            </div>
+        </header>
+        
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="ad">Ad</label>
+                <input type="text" id="ad" name="ad" placeholder="Kullanıcının adını girin">
+            </div>
+            
+            <div class="form-group">
+                <label for="soyad">Soyad</label>
+                <input type="text" id="soyad" name="soyad" placeholder="Kullanıcının soyadını girin">
+            </div>
+            
+            <div class="form-group">
+                <label for="eposta">E-posta</label>
+                <input type="email" id="eposta" name="eposta" placeholder="kullanici@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="sifre">Şifre</label>
+                <input type="password" id="sifre" name="sifre" placeholder="Güçlü bir şifre belirleyin">
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-success">Ekle</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='../kullanicilar/kullanicilar.html'">İptal</button>
+            </div>
+        </form>
+    </div>
+
+<script src="kullaniciekle.js"></script>
+</body>
+</html>

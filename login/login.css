@@ -1,0 +1,149 @@
+/* === GENEL SIFIRLAMA === */
+/* Tüm öğelerin margin ve padding değerlerini sıfırla */
+* {
+    margin: 0; /* Dış boşlukları sıfırla */
+    padding: 0; /* İç boşlukları sıfırla */
+    box-sizing: border-box; /* Padding'i genişliğe dahil et */
+}
+
+/* === BODY STİLLERİ === */
+/* Ana sayfa arka planı ve içerik hizalaması */
+body {
+    font-family: 'Poppins', sans-serif; /* Font ailesini belirle */
+    background-color: #cccccc; /* Arka plan rengi (açık gri) */
+    color: #333; /* Yazı rengi (koyu gri) */
+    display: flex; /* Flexbox kullan */
+    flex-direction: column; /* Öğeleri dikey sırala */
+    justify-content: center; /* Dikeyde ortala */
+    align-items: center; /* Yatayda ortala */
+    min-height: 100vh; /* Minimum yüksekliği ekran boyutuna ayarla */
+    padding: 20px; /* Sayfa kenarlarından boşluk bırak */
+}
+/* === SAYFA BAŞLIĞI === */
+/* "Giriş Yap" başlığının olduğu konteyner */
+.page-header {
+    width: 100%; /* Genişliği tam yap */
+    margin-bottom: 40px; /* Altından 40px boşluk */
+}
+
+/* Başlık yazısı stili */
+.page-header h1 {
+    font-size: 2rem; /* Başlık boyutu */
+    font-weight: 600; /* Orta kalınlıkta yazı */
+    text-align: center; /* Metni ortala */
+}
+
+/* === FORM KONTEYNERİ === */
+/* Login ve signup formlarının etrafındaki kutu */
+.form-container, .signup-container {
+    width: 100%; /* Genişliği tam yap */
+    max-width: 380px; /* Maksimum genişlik 380px */
+    display: flex; /* Flexbox kullan */
+    flex-direction: column; /* Öğeleri dikey sırala */
+    align-items: center; /* İçeriği yatayda ortala */
+}
+/* === FORM İÇERİĞİ === */
+/* Formun ana yapısı */
+form {
+    width: 100%; /* Genişliği tam yap */
+    display: flex; /* Flexbox kullan */
+    flex-direction: column; /* Alanları dikey sırala */
+    align-items: center; /* İçeriği yatayda ortala */
+}
+
+/* === FORM GRUPLARI (Email, Şifre) === */
+/* Her input alanının etrafındaki grup */
+.form-group {
+    width: 100%; /* Genişliği tam yap */
+    margin-bottom: 25px; /* Altından 25px boşluk */
+}
+
+/* Etiket (Label) stili - "Email:", "Şifre:" vb. */
+.form-group label {
+    display: block; /* Block element yap (alt satıra geç) */
+    margin-bottom: 8px; /* Altından 8px boşluk */
+    font-size: 1rem; /* Font boyutu */
+    color: #444; /* Koyu gri renk */
+    padding-left: 15px; /* Soldan 15px içeriden başla */
+}
+
+/* Input alanları (Email, Şifre kutucukları) */
+.form-group input {
+    width: 100%; /* Genişliği tam yap */
+    padding: 14px 20px; /* İçerden 14px dikey, 20px yatay boşluk */
+    border: none; /* Çerçeve yok */
+    border-radius: 50px; /* Tamamen yuvarlatılmış köşeler */
+    font-size: 1rem; /* Font boyutu */
+}
+/* === GİRİŞ YAP BUTONU === */
+/* "Giriş Yap" butonu stili */
+.submit-btn {
+    background-color: #24a524; /* Yeşil arka plan */
+    color: black; /* Siyah yazı rengi */
+    border: none; /* Çerçeve yok */
+    border-radius: 50px; /* Tamamen yuvarlatılmış */
+    padding: 12px 60px; /* İçerden boşluklar */
+    font-size: 1.1rem; /* Font boyutu */
+    font-weight: 600; /* Kalın yazı */
+    cursor: pointer; /* Fare üstüne gelince el işareti */
+    margin-top: 15px; /* Üstten 15px boşluk */
+    transition: background-color 0.3s ease; /* Renk değişimine yumuşak geçiş */
+}
+
+/* Butonun üstüne gelince (hover) rengi koyulaştır */
+.submit-btn:hover {
+    background-color: #1e841e; /* Daha koyu yeşil */
+}
+/* === ALT MENÜ (Giriş Yap / Kayıt Ol) === */
+/* Sayfanın alt kısmındaki navigasyon menüsü */
+.page-nav {
+    margin-top: 40px; /* Üstten 40px boşluk */
+    display: flex; /* Flexbox kullan */
+    flex-direction: column; /* Butonları dikey sırala */
+    align-items: center; /* Yatayda ortala */
+    gap: 10px; /* Butonlar arası 10px boşluk */
+}
+
+/* Navigasyon link butonları */
+.nav-link {
+    background-color: #000; /* Siyah arka plan */
+    color: #fff; /* Beyaz yazı */
+    text-decoration: none; /* Altı çizili değil */
+    padding: 10px 30px; /* İçerden boşluklar */
+    border-radius: 50px; /* Tamamen yuvarlatılmış */
+    font-size: 0.9rem; /* Font boyutu */
+    text-align: center; /* Yazıyı ortala */
+    width: 160px; /* Sabit genişlik */
+    transition: opacity 0.3s ease; /* Opaklık değişimine yumuşak geçiş */
+}
+
+/* Link butonun üstüne gelince biraz saydam yap */
+.nav-link:hover {
+    opacity: 0.8; /* %80 opaklık */
+}
+
+/* === MASAÜSTÜ GÖRÜNÜM (Tablet ve Büyük Ekranlar) === */
+/* Ekran genişliği 768px'ten büyükse bu stiller uygulanır */
+@media (min-width: 768px) {
+    /* Başlığı sol üst köşeye sabitle */
+    .page-header {
+        position: absolute; /* Konumlandırma sabit */
+        top: 40px; /* Üstten 40px içeride */
+        left: 40px; /* Soldan 40px içeride */
+        margin-bottom: 0; /* Alt boşluk yok */
+        width: auto; /* Genişlik içeriğe göre */
+    }
+    
+    /* Başlık yazısını sola hizala */
+    .page-header h1 {
+        text-align: left; /* Sola hizalı */
+    }
+    
+    /* Alt menüyü sağ alt köşeye sabitle */
+    .page-nav {
+        position: absolute; /* Konumlandırma sabit */
+        bottom: 40px; /* Alttan 40px içeride */
+        right: 40px; /* Sağdan 40px içeride */
+        margin-top: 0; /* Üst boşluk yok */
+    }
+}
