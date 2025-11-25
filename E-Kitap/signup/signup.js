@@ -1,76 +1,73 @@
-// DOSYA ADI: Test/signup/signup.js
-// AÇIKLAMA: Kayıt (Signup) formunun JavaScript kodları
-
 // Form gönderilme olayını dinle
 document.getElementById("signupForm").addEventListener("submit", async (e) => {
-    // Formun sayfayı yenilemesini engelle (AJAX için)
+
+    // Formun otomatik sayfa yenilemesini engelle
     e.preventDefault();
 
-    // Tüm input alanlarından veriyi al ve başındaki/sonundaki boşlukları temizle (.trim())
-    const ad = document.getElementById("ad").value.trim(); // İsim alanından değer al
-    const soyad = document.getElementById("soyad").value.trim(); // Soyisim alanından değer al
-    const email = document.getElementById("email").value.trim(); // Email alanından değer al
-    const sifre = document.getElementById("sifre").value.trim(); // Şifre alanından değer al
-    const sifreTekrar = document.getElementById("sifre-tekrar").value.trim(); // Şifre tekrar alanından değer al
-    const messageEl = document.getElementById("message"); // Hata/başarı mesajlarının gösterileceği yer
+    // Form alanlarındaki değerleri al ve trim() ile boşlukları temizle
+    const ad = document.getElementById("ad").value.trim();
+    const soyad = document.getElementById("soyad").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const sifre = document.getElementById("sifre").value.trim();
+    const sifreTekrar = document.getElementById("sifre-tekrar").value.trim();
+    const messageEl = document.getElementById("message"); // Kullanıcıya gösterilecek mesaj alanı
 
-    // Tüm alanların dolu olup olmadığını kontrol et
+    // Zorunlu alan kontrolü
     if (!ad || !soyad || !email || !sifre || !sifreTekrar) {
-        messageEl.style.color = "red"; // Kırmızı renk
-        messageEl.textContent = "Lütfen tüm alanları doldurun."; // Hata mesajı
-        return; // Fonksiyondan çık, devam etme
+        messageEl.style.color = "red";
+        messageEl.textContent = "Lütfen tüm alanları doldurun.";
+        return;
     }
 
-    // Şifrelerin birbiriyle eşleşip eşleşmediğini kontrol et
+    // Şifre eşleşme kontrolü
     if (sifre !== sifreTekrar) {
-        messageEl.style.color = "red"; // Kırmızı renk
-        messageEl.textContent = "Şifreler eşleşmiyor!"; // Hata mesajı
-        return; // Fonksiyondan çık, devam etme
+        messageEl.style.color = "red";
+        messageEl.textContent = "Şifreler eşleşmiyor!";
+        return;
     }
 
-    // Veritabanına kayıt gönderme işlemi
+    // Kayıt verisini sunucuya gönderme işlemi
     try {
-        // signup.php dosyasına POST isteği gönder
+        // signup.php'ye POST isteği gönder
         const response = await fetch("signup.php", {
-            method: "POST", // HTTP POST metodu
-            headers: { "Content-Type": "application/json" }, // JSON formatında veri gönder
-            body: JSON.stringify({ ad, soyad, email, sifre }) // Veriyi JSON'a çevir ve gönder
+            method: "POST",
+            headers: { "Content-Type": "application/json" }, // JSON formatında veri gönderilir
+            body: JSON.stringify({ ad, soyad, email, sifre }) // Veriyi JSON olarak ilet
         });
 
-        // PHP'den dönen JSON sonucunu al
+        // PHP tarafından dönen JSON yanıtı çöz
         const result = await response.json();
 
-        // Kayıt başarılı ise
+        // Kayıt başarılıysa
         if (result.success) {
-            messageEl.style.color = "green"; // Yeşil renk
-            messageEl.textContent = result.message; // Başarı mesajını göster
+            messageEl.style.color = "green";
+            messageEl.textContent = result.message; // Başarı mesajı
             document.getElementById("signupForm").reset(); // Formu temizle
         } else {
-            // Kayıt başarısız ise (örn: email zaten kayıtlı)
-            messageEl.style.color = "red"; // Kırmızı renk
-            messageEl.textContent = result.message; // Hata mesajını göster
+            // Başarısız yanıt durumunda
+            messageEl.style.color = "red";
+            messageEl.textContent = result.message;
         }
     } catch (error) {
-        // Ağ hatası veya sunucu yanıt vermedi ise
-        messageEl.style.color = "red"; // Kırmızı renk
-        messageEl.textContent = "Sunucu hatası veya bağlantı sorunu."; // Genel hata mesajı
+        // İnternet veya sunucu hatası
+        messageEl.style.color = "red";
+        messageEl.textContent = "Sunucu hatası veya bağlantı sorunu.";
     }
 });
 
 // === BOŞLUK ENGEL MEKANİZMASI ===
-// Ad, Soyad, Şifre ve Şifre Tekrar alanlarına boşluk girilmesini engelle
+// Bu alanlara boşluk girilmesi engellenir
 ["ad", "soyad", "sifre", "sifre-tekrar"].forEach((id) => {
-    // Her bir alanı seç
-    const input = document.getElementById(id);
     
-    // Klavyeden tuşa basıldığında dinle
+    const input = document.getElementById(id);
+
+    // Klavyeden boşluk tuşu basılmasını önle
     input.addEventListener("keydown", (e) => {
-        if (e.key === " ") e.preventDefault(); // Eğer basılan tuş "boşluk" ise işlemi engelle
+        if (e.key === " ") e.preventDefault();
     });
     
-    // Input alanına veri girildiğinde veya yapıştırma yapıldığında dinle
+    // Yapıştırma veya farklı girişlerde boşlukları otomatik sil
     input.addEventListener("input", () => {
-        // Metindeki tüm boşlukları (\s+) bul ve sil (değiştir: "" = boş)
-        input.value = input.value.replace(/\s+/g, ""); 
+        input.value = input.value.replace(/\s+/g, ""); // Tüm boşlukları kaldır
     });
 });
