@@ -1,27 +1,27 @@
 /* === GENEL SAYFA AYARLARI === */
 html, body {
-  height: 100%;
-  margin: 0;
-  background-color: #cccccc;
-  font-family: 'Poppins', sans-serif;
+  height: 100%; /* Sayfa yüksekliği tam dolsun */
+  margin: 0; /* Varsayılan boşlukları kaldır */
+  background-color: #cccccc; /* Genel arka plan rengi */
+  font-family: 'Poppins', sans-serif; /* Yazı tipi */
 }
 
 /* === ÇIKIŞ MESAJI STİLLERİ === */
 .logout-message {
-  position: fixed;
-  top: 80px;
+  position: fixed; /* Sayfada sabit konumda */
+  top: 80px; /* Navbar altına hizala */
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 10000;
-  animation: slideDown 0.5s ease-out;
+  transform: translateX(-50%); /* Ortala */
+  z-index: 10000; /* Diğer elemanların üstünde */
+  animation: slideDown 0.5s ease-out; /* Yukarıdan aşağı animasyon */
 }
 
 .logout-alert {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Yeşil başarı mesajı */
   color: white;
   padding: 15px 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Hafif gölge */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -30,19 +30,19 @@ html, body {
 }
 
 .logout-alert i {
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* Icon boyutu */
 }
 
 .logout-alert span {
   flex: 1;
-  font-weight: 600;
+  font-weight: 600; /* Mesaj metni kalın */
 }
 
 .close-btn {
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Çarpı ikon boyutu */
   cursor: pointer;
   padding: 0;
   width: 24px;
@@ -55,17 +55,18 @@ html, body {
 }
 
 .close-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2); /* Hover efekti */
 }
 
+/* Animasyon tanımı */
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateX(-50%) translateY(-20px); /* Yukarıdan gel */
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0); /* Son pozisyon */
   }
 }
 
@@ -83,24 +84,24 @@ html, body {
   font-style: italic;
 }
 
+/* Body flex ile tüm sayfa yüksekliğini kullanır */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* NAVBAR’ın altında içerik boşluğu */
+/* NAVBAR altındaki içerik boşluğu */
 .page-content {
-  flex-grow: 1;
-  padding-top: 70px; /* Navbar boşluğu, kalsın */
+  flex-grow: 1; /* Footer altına kadar uzanır */
+  padding-top: 70px; /* Navbar yüksekliği kadar boşluk */
   text-align: center;
   background: #cccccc;
-  margin-top: -90px;
+  margin-top: -90px; /* Gerekirse ayarlama */
 }
 
 /* === SLIDER === */
 .slider-wrapper {
-  /* Slider'ın pozisyonu değişmedi */
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
@@ -111,11 +112,11 @@ body {
   font-size: 1.6rem;
   color: #333;
   margin: 1rem 1rem;
-  border-left: 4px solid #3498db;
+  border-left: 4px solid #3498db; /* Mavi çizgi */
   padding-left: 0.5rem;
 }
 
-/* --- Slider container (butonlu yapı) --- */
+/* Slider container */
 .slider-container {
   position: relative;
   width: 100%;
@@ -128,23 +129,23 @@ body {
 
 .slider {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out; /* Kaydırma animasyonu */
   width: 100%;
 }
 
 .slide {
-  flex: 0 0 100%;
+  flex: 0 0 100%; /* Her slide %100 genişlik */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 450px;
+  height: 450px; /* Slider yüksekliği */
 }
 
 .slide img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: contain; /* Resim bozulmadan sığar */
   background-color: #cccccc;
   border-radius: 0;
 }
@@ -168,13 +169,8 @@ body {
   background-color: rgba(41, 128, 185, 0.9);
 }
 
-.slider-btn.prev {
-  left: 10px;
-}
-
-.slider-btn.next {
-  right: 10px;
-}
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
 
 /* === ANA İÇERİK === */
 .content {
@@ -184,7 +180,6 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  /* margin-top: -60px; */ /* Kaldırıldı */
   position: relative;
   z-index: 1;
 }
@@ -212,35 +207,15 @@ body {
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .slider-wrapper h2 {
-    font-size: 1.3rem;
-    margin: 1rem;
-  }
-
-  .slide {
-    height: 250px;
-  }
-
-  .slider-btn {
-    padding: 8px 10px;
-  }
-
-  .slide img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .content {
-    padding: 1.2rem;
-    /* margin-top: -40px; */ /* Kaldırıldı */
-  }
-
-  .content h1 {
-    font-size: 1.6rem;
-  }
+  .slider-wrapper h2 { font-size: 1.3rem; margin: 1rem; }
+  .slide { height: 250px; }
+  .slider-btn { padding: 8px 10px; }
+  .slide img { width: 100%; height: 100%; }
+  .content { padding: 1.2rem; }
+  .content h1 { font-size: 1.6rem; }
 }
 
-/* === POPÜLER KİTAPLAR (ÇAKIŞMAYAN SINIFLAR) === */
+/* === POPÜLER KİTAPLAR === */
 .anasayfa-populer-bolum {
   width: 100%;
   padding: 2rem 0;
@@ -264,7 +239,7 @@ body {
 
 .anasayfa-kitap-izgara {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 sütunlu grid */
   gap: 1.5rem;
 }
 
@@ -282,13 +257,13 @@ body {
 .anasayfa-kitap-resim {
   width: 100%;
   height: 250px;
-  background-color: #f8f8f8; /* Resim tam sığmazsa boşlukların rengi */
+  background-color: #f8f8f8; /* Resim boşsa gri arkaplan */
 }
 
 .anasayfa-kitap-resim img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 🔹 DEĞİŞİKLİK: 'cover' yerine 'contain' yapıldı */
+  object-fit: contain; /* Resim bozulmadan sığar */
   display: block;
 }
 
@@ -305,13 +280,13 @@ body {
   margin: 0 0 0.5rem 0;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; /* Uzun başlıklar kısalır */
 }
 
 .anasayfa-kitap-fiyat {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #3498db;
+  color: #3498db; /* Mavi fiyat */
   margin: 0 0 1rem 0;
   margin-top: auto;
 }
@@ -326,51 +301,45 @@ body {
 .anasayfa-adet-kontrol {
   display: flex;
   border: 1px solid #ccc;
-  border-radius: 4px; /* Dış çerçeve için yuvarlaklık */
-  overflow: hidden; /* Buton köşelerini gizle */
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .anasayfa-adet-kontrol button {
-  background-color: #f8f8f8; /* Hafif gri buton arkaplanı */
+  background-color: #f8f8f8;
   border: none;
-  color: #555; /* Biraz daha koyu gri ikon/yazı */
+  color: #555;
   cursor: pointer;
   padding: 0.5rem 0.8rem;
-  font-size: 1.1rem; /* Buton içindeki + ve - biraz daha belirgin */
+  font-size: 1.1rem;
   line-height: 1;
   transition: background-color 0.2s;
 }
 
-.anasayfa-adet-kontrol button:hover {
-  background-color: #e8e8e8; /* Hover'da biraz daha koyu gri */
-}
-
-.anasayfa-adet-kontrol button:active {
-  background-color: #ddd; /* Tıklama anında */
-}
+.anasayfa-adet-kontrol button:hover { background-color: #e8e8e8; }
+.anasayfa-adet-kontrol button:active { background-color: #ddd; }
 
 .anasayfa-adet-kontrol .anasayfa-kitap-adet {
-  width: 100%; /* Ortadaki alan genişlesin */
+  width: 100%;
   border: none;
-  border-left: 1px solid #ccc; /* Butonlardan ayır */
-  border-right: 1px solid #ccc; /* Butonlardan ayır */
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
   padding: 0.5rem;
   text-align: center;
   font-size: 1rem;
-  font-weight: 500; /* Rakam biraz daha okunaklı */
+  font-weight: 500;
   color: #333;
-  /* Tarayıcı oklarını gizle */
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
 .anasayfa-adet-kontrol .anasayfa-kitap-adet::-webkit-outer-spin-button,
 .anasayfa-adet-kontrol .anasayfa-kitap-adet::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* === ADET KONTROLÜ STİLLERİ SONU === */
 
-
+/* Sepete ekle butonu */
 .anasayfa-sepete-ekle-btn {
   background-color: #3498db;
   color: white;
@@ -383,31 +352,16 @@ body {
   transition: background-color 0.3s;
 }
 
-.anasayfa-sepete-ekle-btn:hover {
-  background-color: #2980b9;
-}
+.anasayfa-sepete-ekle-btn:hover { background-color: #2980b9; }
 
-/* === POPÜLER KİTAPLAR (RESPONSIVE) === */
+/* === POPÜLER KİTAPLAR RESPONSIVE === */
 @media (max-width: 992px) {
-  .anasayfa-kitap-izgara {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .anasayfa-kitap-izgara { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .anasayfa-kitap-izgara {
-    grid-template-columns: 1fr;
-  }
-  .anasayfa-populer-bolum h2 {
-    text-align: center;
-  }
-  /* Mobilde butonları ve inputu biraz küçültelim */
-  .anasayfa-adet-kontrol button {
-    padding: 0.4rem 0.6rem;
-    font-size: 1rem;
-  }
-   .anasayfa-adet-kontrol .anasayfa-kitap-adet{
-     padding: 0.4rem;
-     font-size: 0.95rem;
-   }
+  .anasayfa-kitap-izgara { grid-template-columns: 1fr; }
+  .anasayfa-populer-bolum h2 { text-align: center; }
+  .anasayfa-adet-kontrol button { padding: 0.4rem 0.6rem; font-size: 1rem; }
+  .anasayfa-adet-kontrol .anasayfa-kitap-adet { padding: 0.4rem; font-size: 0.95rem; }
 }

@@ -1,4 +1,6 @@
-/* Temel Ayarlar ve Sayfa Arka Planı */
+/* ------------------------------------------------------ */
+/* TEMEL AYARLAR VE SAYFA ARKA PLANI */
+/* ------------------------------------------------------ */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,47 +12,53 @@ body {
     background-color: #f4f7f6;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Üstten başlaması için */
+    align-items: flex-start; /* Sayfa içeriği yukarıdan başlasın */
     min-height: 100vh;
     padding: 20px;
     color: #333;
 }
 
-/* Ana Form Konteyneri */
+/* ------------------------------------------------------ */
+/* ANA KONTEYNER */
+/* ------------------------------------------------------ */
 .container {
     width: 100%;
-    max-width: 800px; /* Formun maksimum genişliği */
+    max-width: 800px;        /* Formun maksimum genişliği */
 }
 
 .form-container {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* Köşelerin düzgün görünmesi için */
+    overflow: hidden;        /* Köşelerin düzgün görünmesi için */
 }
 
-/* Form Başlığı (Header) */
+/* ------------------------------------------------------ */
+/* FORM BAŞLIĞI */
+/* ------------------------------------------------------ */
 .form-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 24px;
     border-bottom: 1px solid #e0e0e0;
-    flex-wrap: wrap; /* Mobil için */
+    flex-wrap: wrap;         /* Mobil uyum için */
 }
 
 .form-header h1 {
-    font-size: 1.75rem; /* 28px */
+    font-size: 1.75rem;     /* 28px */
     color: #222;
     margin: 0;
 }
 
 .header-buttons {
     display: flex;
-    gap: 10px;
+    gap: 10px;              /* Butonlar arası mesafe */
 }
 
-/* Genel Buton Stilleri */
+/* ------------------------------------------------------ */
+/* BUTON STİLLERİ */
+/* ------------------------------------------------------ */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -58,17 +66,16 @@ body {
     padding: 10px 16px;
     border: none;
     border-radius: 6px;
-    font-size: 0.95rem; /* 15px */
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.2s, border-color 0.2s;
-    white-space: nowrap; /* Buton metni alta kaymasın */
+    transition: background-color 0.2s;
+    white-space: nowrap;
 }
 
-/* Navigasyon Butonları (Gri) */
 .btn-nav {
-    background-color: #6c757d; /* Resimdeki gri renk */
+    background-color: #6c757d;
     color: white;
 }
 
@@ -76,7 +83,9 @@ body {
     background-color: #5a6268;
 }
 
-/* Ana Form Alanı */
+/* ------------------------------------------------------ */
+/* FORM GÖVDE KISMI */
+/* ------------------------------------------------------ */
 .product-form {
     padding: 24px;
 }
@@ -92,7 +101,9 @@ body {
     color: #444;
 }
 
-/* Input ve Select Kutuları */
+/* ------------------------------------------------------ */
+/* INPUT VE SELECT KUTULARI */
+/* ------------------------------------------------------ */
 input[type="text"],
 input[type="number"],
 select,
@@ -105,13 +116,12 @@ textarea {
     color: #333;
 }
 
-input[type="text"]::placeholder,
+input::placeholder,
 textarea::placeholder {
     color: #999;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
+input:focus,
 select:focus,
 textarea:focus {
     outline: none;
@@ -119,22 +129,22 @@ textarea:focus {
     box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
 
-/* Resim Yükleme Alanı */
+/* ------------------------------------------------------ */
+/* RESİM YÜKLEME ALANI */
+/* ------------------------------------------------------ */
 .image-upload-wrapper {
     display: flex;
-    flex-direction: column; /* GÜNCELLENDİ: Öğeleri dikey hizala */
-    align-items: flex-start; /* GÜNCELLENDİ: Öğeleri sola hizala */
+    flex-direction: column;     /* Dikey hizalama */
+    align-items: flex-start;
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .file-input {
-    display: none; /* Gerçek 'file' input'u gizle */
+    display: none;              /* Gerçek input gizlenir */
 }
 
-/* "Resim Seç" butonu (label etiketi) */
 .btn-secondary {
-    background-color: #e9ecef; /* Açık gri */
+    background-color: #e9ecef;
     color: #333;
     border: 1px solid #ced4da;
 }
@@ -143,7 +153,7 @@ textarea:focus {
     background-color: #dee2e6;
 }
 
-/* Resim Önizleme Kutusu */
+/* Resim önizleme kutusu */
 .image-preview {
     width: 120px;
     height: 120px;
@@ -153,7 +163,7 @@ textarea:focus {
     justify-content: center;
     align-items: center;
     background-color: #f9f9f9;
-    overflow: hidden; /* Resim taşarsa gizle */
+    overflow: hidden;           /* Taşan görüntü gizlenir */
 }
 
 .preview-text {
@@ -164,10 +174,12 @@ textarea:focus {
 .image-preview img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Resmi kutuya sığdır */
+    object-fit: cover;          /* Resim kutuya sığsın */
 }
 
-/* Form Alt Butonları (İptal, Kaydet) */
+/* ------------------------------------------------------ */
+/* FORM ALT BUTONLARI */
+/* ------------------------------------------------------ */
 .form-actions {
     display: flex;
     justify-content: flex-end;
@@ -178,7 +190,7 @@ textarea:focus {
 }
 
 .btn-primary {
-    background-color: #0d6efd; /* Resimdeki mavi renk */
+    background-color: #0d6efd;
     color: white;
 }
 
@@ -196,7 +208,9 @@ textarea:focus {
     background-color: #e2e6ea;
 }
 
-/* --- Alert Mesajları --- */
+/* ------------------------------------------------------ */
+/* ALERT MESAJLARI */
+/* ------------------------------------------------------ */
 .alert {
     padding: 12px 16px;
     margin-bottom: 20px;
@@ -207,60 +221,53 @@ textarea:focus {
 .alert-success {
     background-color: #d4edda;
     color: #155724;
-    border: 1px solid #c3e6cb;
 }
 
 .alert-error {
     background-color: #f8d7da;
     color: #721c24;
-    border: 1px solid #f5c6cb;
 }
 
-/* --- Form Text --- */
+/* ------------------------------------------------------ */
+/* YARDIMCI AÇIKLAMA METNİ */
+/* ------------------------------------------------------ */
 .form-text {
     font-size: 0.875rem;
     color: #6c757d;
     margin-top: 0.25rem;
 }
 
-/* ---------------- */
-/* Responsive Tasarım */
-/* ---------------- */
-
+/* ------------------------------------------------------ */
+/* RESPONSIVE TASARIM (MOBİL) */
+/* ------------------------------------------------------ */
 @media (max-width: 768px) {
     body {
-        padding: 10px; /* Mobilde kenar boşluğunu azalt */
+        padding: 10px;
     }
 
     .form-header {
-        flex-direction: column; /* Başlık ve butonları alt alta getir */
-        align-items: flex-start; /* Sola hizala */
+        flex-direction: column;
+        align-items: flex-start;
         gap: 15px;
     }
 
     .header-buttons {
         width: 100%;
-        flex-direction: column; /* Navigasyon butonlarını alt alta */
+        flex-direction: column;
     }
 
     .btn {
-        width: 100%; /* Butonlar tam genişlik kaplasın */
-        justify-content: center; /* İkon ve metni ortala */
+        width: 100%;
+        justify-content: center;
     }
 
     .form-actions {
-        flex-direction: column-reverse; /* "Kaydet" butonu üste gelsin */
+        flex-direction: column-reverse;
         width: 100%;
     }
-    
-    /* .image-upload-wrapper kuralı kaldırıldı çünkü artık temel stilde (yukarıda) tanımlı */
 
-    .image-upload-wrapper .btn-secondary {
-        width: auto; /* "Resim Seç" butonu tam genişlik olmasın */
-    }
-    
     .image-preview {
-        width: 100%; /* Önizleme alanı tam genişlik */
-        height: 200px; /* Yüksekliğini arttır */
+        width: 100%;
+        height: 200px;
     }
 }

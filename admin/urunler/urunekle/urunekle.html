@@ -1,34 +1,48 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html> <!-- HTML5 belgesi olduğunu belirtir -->
+<html lang="tr"> <!-- Sayfa dilini Türkçe olarak ayarlar -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeni Ürün Ekle</title>
+    <meta charset="UTF-8"> <!-- Türkçe karakter uyumunu sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyum için -->
+    <title>Yeni Ürün Ekle</title> <!-- Tarayıcı sekmesi başlığı -->
+    
+    <!-- Harici CSS dosyası (sayfa tasarımı) -->
     <link rel="stylesheet" href="urunekle.css">
+
+    <!-- Font Awesome icon (ikon kullanımı için) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
+    <!-- Ana kapsayıcı -->
     <div class="container">
-        <div class="form-container">
+        <div class="form-container"> <!-- Form kart yapısı -->
+            
+            <!-- Sayfa başlığı ve navigasyon butonları -->
             <header class="form-header">
-                <h1>Yeni Ürün Ekle</h1>
+                <h1>Yeni Ürün Ekle</h1> <!-- Sayfanın ana başlığı -->
+
                 <div class="header-buttons">
+                    <!-- Anasayfa linki -->
                     <a href="../../adminindex.html" class="btn btn-nav">
                         <i class="fas fa-home"></i> Anasayfa Dön
                     </a>
+                    <!-- Ürün listesi sayfasına dönüş -->
                     <a href="../urunler/urunler.html" class="btn btn-nav">
                         <i class="fas fa-list"></i> Ürün Listesine Dön
                     </a>
                 </div>
             </header>
 
+            <!-- Ürün ekleme formu -->
             <form class="product-form">
+                
+                <!-- Ürün adı girişi -->
                 <div class="form-group">
                     <label for="product-name">Ürün Adı</label>
                     <input type="text" id="product-name" placeholder="Örn: Akıllı Telefon Model X">
                 </div>
 
+                <!-- Kategori seçimi -->
                 <div class="form-group">
                     <label for="category">Kategori</label>
                     <select id="category">
@@ -39,28 +53,38 @@
                     </select>
                 </div>
 
+                <!-- Fiyat alanı -->
                 <div class="form-group">
                     <label for="price">Fiyat (TL)</label>
                     <input type="text" id="price" placeholder="Örn: 15000">
                 </div>
 
+                <!-- Resim yükleme alanı -->
                 <div class="form-group">
                     <label>Ürün Resmi</label>
                     <div class="image-upload-wrapper">
+
+                        <!-- Gerçek input gizlenir, sadece JS tarafından kullanılır -->
                         <input type="file" id="product-image" accept="image/*" class="file-input">
                         
+                        <!-- Resim önizleme kutusu -->
                         <div id="image-preview" class="image-preview">
                             <span class="preview-text">Önizleme</span>
                         </div>
 
+                        <!-- Kullanıcının tıklayıp resim seçtiği buton -->
                         <label for="product-image" class="btn btn-secondary">
                             <i class="fas fa-upload"></i> Resim Seç
                         </label>
                     </div>
                 </div>
 
+                <!-- Form butonları -->
                 <div class="form-actions">
+                    <!-- İptal tuşu: Listeye geri döner -->
                     <button onclick="location.href='../urunler/urunler.html'" type="button" class="btn btn-cancel">İptal</button>
+
+                    <!-- Form gönderme butonu -->
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-save"></i> Ürünü Kaydet
                     </button>

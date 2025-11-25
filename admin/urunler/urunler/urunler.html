@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürün Listesi</title>
+    <meta charset="UTF-8"> <!-- Türkçe karakter desteği -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyumlu tasarım -->
+    
+    <title>Ürün Listesi</title> <!-- Sayfa başlığı -->
+
+    <!-- Sayfa stil dosyası -->
     <link rel="stylesheet" href="urunler.css">
+
+    <!-- Font Awesome – ikonlar için (düzenle/sil ikonları vs.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
+    <!-- ANA KONTEYNER -->
     <div class="container">
+
+        <!-- SAYFA BAŞLIĞI -->
         <header class="main-header">
             <h1>Ürün Listesi</h1>
         </header>
 
+        <!-- KONTROL ALANI (Kategori ekleme + sayfa gezintisi) -->
         <section class="controls">
+
+            <!-- KATEGORİ EKLEME FORMU -->
             <form class="category-form">
-                <input type="text" placeholder="Eklenecek Kategori Adı">
+                <input type="text" placeholder="Eklenecek Kategori Adı"> <!-- Kullanıcı kategori adı girer -->
                 <button type="submit" class="btn btn-light">Kategori Ekle</button>
             </form>
+
+            <!-- SAYFA GEZİNME BUTONLARI -->
             <div class="page-actions">
                 <button onclick="location.href='../../adminindex.html'" class="btn btn-secondary">Anasayfaya Dön</button>
                 <button onclick="location.href='../urunekle/urunekle.html'" class="btn btn-primary">Yeni Ürün Ekle</button>
             </div>
         </section>
 
+        <!-- ÜRÜNLERİN LİSTELENDİĞİ ALAN -->
         <section class="product-list">
             <div class="product-table">
+
+                <!-- TABLO BAŞLIĞI -->
                 <div class="table-header">
                     <div class="header-cell">Ürün Resmi</div>
                     <div class="header-cell">Ürün Adı</div>
@@ -35,24 +51,36 @@
                     <div class="header-cell">İşlemler</div>
                 </div>
 
+                <!-- TEK BİR ÜRÜN SATIRI (ÖRNEK VERİ) -->
                 <div class="table-row">
+
+                    <!-- ÜRÜN ÜZERİNE TIKLAYABİLİR RESİM ALANI -->
                     <div class="table-cell" data-label="Ürün Resmi">
-                        <img src="https://via.placeholder.com/80x40?text=Akıllı+Telefon" alt="Akıllı Telefon" class="product-image">
+                        <img src="https://via.placeholder.com/80x40?text=Akıllı+Telefon" 
+                             alt="Akıllı Telefon" class="product-image">
                     </div>
+
                     <div class="table-cell" data-label="Ürün Adı">Akıllı Telefon Model X</div>
                     <div class="table-cell" data-label="Kategori">Elektronik</div>
                     <div class="table-cell" data-label="Fiyat">15.000 TL</div>
+
+                    <!-- İŞLEM BUTONLARI (DÜZENLE & SİL) -->
                     <div class="table-cell" data-label="İşlemler">
-                        <button onclick="location.href='../urunduzenle/urunduzenle.html'" class="btn-icon btn-edit" aria-label="Düzenle">
-                            <i class="fas fa-pencil-alt"></i>
+
+                        <!-- DÜZENLE BUTONU -->
+                        <button onclick="location.href='../urunduzenle/urunduzenle.html'" 
+                                class="btn-icon btn-edit" aria-label="Düzenle">
+                            <i class="fas fa-pencil-alt"></i> <!-- Kalem ikonu -->
                         </button>
+
+                        <!-- SİL BUTONU -->
                         <button class="btn-icon btn-delete" aria-label="Sil">
-                            <i class="fas fa-trash"></i>
+                            <i class="fas fa-trash"></i> <!-- Çöp kutusu ikonu -->
                         </button>
                     </div>
                 </div>
-                
-                </div>
+
+            </div>
         </section>
     </div>
 

@@ -4,42 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Üye Ol</title>
+    <!-- CSS dosyası bağlantısı -->
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
+    <!-- Sayfa başlığı -->
     <header class="page-header">
         <h1>ÜYE OL</h1>
     </header>
+
+    <!-- Ana içerik: Üye olma formu -->
     <main class="signup-container">
         <form id="signupForm">
+            <!-- Ad alanı -->
             <div class="form-group">
                 <label for="ad">Ad</label>
                 <input type="text" id="ad" name="ad" required>
             </div>
+
+            <!-- Soyad alanı -->
             <div class="form-group">
                 <label for="soyad">Soyad</label>
                 <input type="text" id="soyad" name="soyad" required>
             </div>
+
+            <!-- E-posta alanı -->
             <div class="form-group">
                 <label for="email">E-Posta</label>
                 <input type="email" id="email" name="email" required>
             </div>
+
+            <!-- Şifre alanı -->
             <div class="form-group">
                 <label for="sifre">Şifre</label>
                 <input type="password" id="sifre" name="sifre" required>
             </div>
+
+            <!-- Şifre tekrar alanı -->
             <div class="form-group">
                 <label for="sifre-tekrar">Şifre Tekrar</label>
                 <input type="password" id="sifre-tekrar" name="sifre-tekrar" required>
             </div>
+
+            <!-- Form gönderme butonu -->
             <button type="submit" class="submit-btn">Üye Ol</button>
         </form>
     </main>
+
+    <!-- Alt navigasyon -->
     <nav class="page-nav">
-        <a href="../login/login.html" class="nav-link">Giriş Yap</a>
-        <a href="../index/index.html" class="nav-link">Anasayfa</a>
+        <a href="../login/login.html" class="nav-link">Giriş Yap</a> <!-- Login sayfasına yönlendirir -->
+        <a href="../index/index.html" class="nav-link">Anasayfa</a> <!-- Anasayfaya yönlendirir -->
     </nav>
+
+    <!-- Dinamik mesaj alanı (JavaScript ile doldurulacak) -->
     <p id="message" style="text-align:center; margin-top:15px;"></p>
+
+    <!-- JS dosyası bağlantısı -->
     <script src="signup.js"></script>
 </body>
 </html>

@@ -1,54 +1,68 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html> <!-- HTML5 belgesi olduğunu belirtir -->
+<html lang="tr"> <!-- Sayfa dilinin Türkçe olduğunu belirtir -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeni Kullanıcı Ekle</title>
-    <link rel="stylesheet" href="kullaniciekle.css">
+    <meta charset="UTF-8"> <!-- Türkçe karakterler (UTF-8) kullanılabilmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyumluluğu sağlar -->
+    <title>Yeni Kullanıcı Ekle</title> <!-- Sekmede görünen başlık -->
+    <link rel="stylesheet" href="kullaniciekle.css"> <!-- Harici CSS dosyası bağlantısı -->
 </head>
 <body>
 
+    <!-- FORM KAPSAYICI ALAN -->
     <div class="form-container">
+        
+        <!-- FORM BAŞLIK KISMI -->
         <header class="form-header">
-            <h1>Yeni Kullanıcı Ekle</h1>
+            <h1>Yeni Kullanıcı Ekle</h1> <!-- Sayfa başlığı -->
+            
+            <!-- Başlıkta navigasyon butonları -->
             <div class="header-buttons">
                 <a href="../../adminindex.html" class="btn btn-secondary">
-                    &#8962; Anasayfaya Dön
+                    &#8962; Anasayfaya Dön <!-- Home simgesi -->
                 </a>
                 <a href="../kullanicilar/kullanicilar.html" class="btn btn-primary">
-                    &larr; Listeye Geri Dön
+                    &larr; Listeye Geri Dön <!-- Geri dön butonu -->
                 </a>
             </div>
         </header>
         
-        <form action="#" method="POST">
+        <!-- KULLANICI EKLEME FORMU -->
+        <form action="#" method="POST"> <!-- Action boş, backend bağlanınca doldurulabilir -->
+            
+            <!-- Ad bilgisi inputu -->
             <div class="form-group">
-                <label for="ad">Ad</label>
-                <input type="text" id="ad" name="ad" placeholder="Kullanıcının adını girin">
+                <label for="ad">Ad</label> <!-- Açıklama yazısı -->
+                <input type="text" id="ad" name="ad" placeholder="Kullanıcının adını girin"> <!-- Kullanıcı adı -->
             </div>
             
+            <!-- Soyad bilgisi inputu -->
             <div class="form-group">
                 <label for="soyad">Soyad</label>
                 <input type="text" id="soyad" name="soyad" placeholder="Kullanıcının soyadını girin">
             </div>
             
+            <!-- E-posta inputu -->
             <div class="form-group">
                 <label for="eposta">E-posta</label>
-                <input type="email" id="eposta" name="eposta" placeholder="kullanici@example.com">
+                <input type="email" id="eposta" name="eposta" placeholder="kullanici@example.com"> <!-- E-posta formatı kontrol edilir -->
             </div>
             
+            <!-- Şifre inputu -->
             <div class="form-group">
                 <label for="sifre">Şifre</label>
                 <input type="password" id="sifre" name="sifre" placeholder="Güçlü bir şifre belirleyin">
             </div>
             
+            <!-- FORM BUTONLARI -->
             <div class="form-actions">
-                <button type="submit" class="btn btn-success">Ekle</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='../kullanicilar/kullanicilar.html'">İptal</button>
+                <button type="submit" class="btn btn-success">Ekle</button> <!-- Form gönderme -->
+                <button type="button" class="btn btn-warning" 
+                    onclick="window.location.href='../kullanicilar/kullanicilar.html'">İptal</button> <!-- Sayfaya geri dön -->
             </div>
         </form>
     </div>
 
+<!-- Harici JS dosyası bağlantısı -->
 <script src="kullaniciekle.js"></script>
 </body>
 </html>

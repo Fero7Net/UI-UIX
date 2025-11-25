@@ -1,36 +1,41 @@
+/* === RENK ve STİL DEĞİŞKENLERİ (Tema) === */
 :root {
-    --primary-green: #28a745;
-    --primary-green-hover: #218838;
-    --secondary-gray: #6c757d;
-    --secondary-gray-hover: #5a6268;
-    --card-bg: #ffffff;
-    --page-bg: #f4f7f6;
-    --text-dark: #333333;
-    --text-light: #555555;
-    --border-color: #eeeeee;
-    --header-bg: #f9f9f9;
-    --action-edit: #007bff;
-    --action-delete: #dc3545;
+    --primary-green: #28a745; /* Ana yeşil buton rengi */
+    --primary-green-hover: #218838; /* Buton hover rengi */
+    --secondary-gray: #6c757d; /* Gri buton rengi */
+    --secondary-gray-hover: #5a6268; /* Gri hover rengi */
+    --card-bg: #ffffff; /* Kart arka planı */
+    --page-bg: #f4f7f6; /* Sayfa arka planı */
+    --text-dark: #333333; /* Genel yazı rengi */
+    --text-light: #555555; /* Açık yazı rengi */
+    --border-color: #eeeeee; /* Tablo çizgi rengi */
+    --header-bg: #f9f9f9; /* Tablo üst arka plan rengi */
+    --action-edit: #007bff; /* Düzenleme buton rengi */
+    --action-delete: #dc3545; /* Silme buton rengi */
 }
 
+/* Temel sıfırlama (Browser varsayılanlarını kaldırma) */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--page-bg);
+    background-color: var(--page-bg); /* Arka plan rengi */
     color: var(--text-dark);
     padding: 20px;
 }
 
+/* Sayfa ortalama */
 .container { max-width: 1200px; margin: 0 auto; }
 
+/* Kullanıcı panel kartı */
 .user-management-card {
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    overflow: hidden;
+    overflow: hidden; /* Taşmaların görünmesini engeller */
 }
 
+/* Başlık kısmı */
 .card-header {
     display: flex;
     align-items: center;
@@ -40,8 +45,12 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
-.card-header h1 { font-size: 20px; font-weight: 600; margin-right: auto; }
+.card-header h1 { 
+    font-size: 20px; font-weight: 600; 
+    margin-right: auto; /* Diğer butonları sağa iter */
+}
 
+/* Genel buton stili */
 .btn {
     text-decoration: none;
     color: white;
@@ -52,32 +61,50 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Butonlar */
+/* --- Buton Renkleri --- */
 .btn-green { background-color: var(--primary-green); }
 .btn-green:hover { background-color: var(--primary-green-hover); }
 
 .btn-secondary { background-color: var(--secondary-gray); }
 .btn-secondary:hover { background-color: var(--secondary-gray-hover); }
 
-.table-wrapper { overflow-x: auto; }
+.table-wrapper { overflow-x: auto; } /* Taşma olursa kaydırılır */
 
-.user-table { width: 100%; border-collapse: collapse; }
+.user-table { 
+    width: 100%; border-collapse: collapse; 
+}
 
-.user-table th, .user-table td { padding: 15px 20px; text-align: left; vertical-align: middle; }
+.user-table th, .user-table td {
+    padding: 15px 20px;
+    text-align: left; 
+    vertical-align: middle;
+}
 
 .user-table thead { background-color: var(--header-bg); }
 
 .user-table th {
-    font-size: 12px; color: var(--text-light); text-transform: uppercase;
-    font-weight: 600; letter-spacing: 0.5px;
+    font-size: 12px;
+    color: var(--text-light);
+    text-transform: uppercase; /* Büyük harf yazım */
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .user-table tbody tr { border-bottom: 1px solid var(--border-color); }
 .user-table tbody tr:last-child { border-bottom: none; }
 
-.user-table td { font-size: 14px; color: var(--text-dark); }
+.user-table td { 
+    font-size: 14px; 
+    color: var(--text-dark); 
+}
 
-.btn-action { font-weight: 500; margin-right: 10px; font-size: 14px; text-decoration: none; }
+/* Düzenle / Sil Linkleri */
+.btn-action {
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 14px;
+    text-decoration: none;
+}
 .btn-action.edit { color: var(--action-edit); }
 .btn-action.delete { color: var(--action-delete); }
 
@@ -101,7 +128,7 @@ body {
     border: 1px solid #f5c6cb;
 }
 
-/* --- Badge Stilleri --- */
+/* --- Kullanıcı türü (Yönetici / Normal) Etiket --- */
 .badge {
     padding: 4px 8px;
     border-radius: 12px;
@@ -120,7 +147,7 @@ body {
     color: white;
 }
 
-/* --- Buton Boyutları --- */
+/* --- Küçük Butonlar --- */
 .btn-sm {
     padding: 6px 12px;
     font-size: 12px;
@@ -146,26 +173,49 @@ body {
     cursor: pointer;
 }
 
-/* --- RESPONSIVE --- */
+/* === RESPONSIVE (Mobil Görünüm) === */
 @media (max-width: 768px) {
+    /* Başlık elemanlarını dikey sırala */
     .card-header { flex-direction: column; align-items: stretch; }
     .card-header h1 { margin-right: 0; text-align: left; }
+
+    /* Butonları tam genişlik yap */
     .btn-green, .btn-secondary { width: 100%; text-align: center; }
 
-    .user-table thead { display: none; }
+    /* Tabloyu mobil görünüme çevir */
+    .user-table thead { display: none; } /* Tablo başlığı gizlenir */
+    
     .user-table tr {
-        display: block; border: none; border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 15px; background: var(--card-bg);
+        display: block;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 15px;
+        background: var(--card-bg);
     }
+
     .user-table td {
-        display: flex; justify-content: space-between; align-items: center;
-        padding: 12px 15px; text-align: right; border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        text-align: right;
+        border-bottom: 1px solid var(--border-color);
     }
+
     .user-table td:last-child { border-bottom: none; }
+
+    /* Mobilde her hücrenin başlığı gösterilir */
     .user-table td::before {
-        content: attr(data-label); font-weight: 600; font-size: 13px;
-        color: var(--text-dark); padding-right: 10px; text-align: left;
+        content: attr(data-label); /* HTML’de data-label’dan alınır */
+        font-weight: 600;
+        font-size: 13px;
+        color: var(--text-dark);
+        padding-right: 10px;
+        text-align: left;
     }
+
+    /* İşlemler kısmı düzenlendi */
     .user-table td[data-label="İŞLEMLER"] { justify-content: flex-start; }
     .user-table td[data-label="İŞLEMLER"]::before { display: none; }
 }

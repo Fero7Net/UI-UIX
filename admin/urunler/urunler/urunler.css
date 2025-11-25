@@ -2,22 +2,24 @@
 :root {
     --primary-color: #0d6efd;   /* Mavi */
     --secondary-color: #6c757d; /* Koyu Gri */
-    --light-color: #f8f9fa;     /* Açık Gri (Arkaplan) */
-    --light-gray: #e9ecef;    /* Açık Gri (Buton) */
+    --light-color: #f8f9fa;     /* Açık Gri (Sayfa arka planı) */
+    --light-gray: #e9ecef;      /* Açık Gri (Butonlarda kullanılıyor) */
     --text-color: #212529;
     --border-color: #dee2e6;
     --white-color: #ffffff;
-    --warning-color: #ffc107;  /* Sarı */
-    --danger-color: #dc3545;   /* Kırmızı */
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --warning-color: #ffc107;   /* Sarı (Düzenle butonu) */
+    --danger-color: #dc3545;    /* Kırmızı (Sil butonu) */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Hafif gölge efekti */
 }
 
+/* Tüm elementlerde sıfırlama */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Sayfa genel ayarları */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: var(--light-color);
@@ -26,6 +28,7 @@ body {
     padding: 20px;
 }
 
+/* Ana konteyner - içeriği ortalar */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -35,6 +38,7 @@ body {
     overflow: hidden;
 }
 
+/* Üst başlık alanı */
 .main-header {
     padding: 20px 25px;
     border-bottom: 1px solid var(--border-color);
@@ -45,16 +49,17 @@ body {
     font-weight: 600;
 }
 
-/* === Kontrol Paneli === */
+/* === Kontrol Paneli (Kategori ekleme & gezinme butonları) === */
 .controls {
     display: flex;
-    flex-wrap: wrap; /* Küçük ekranlarda alt alta gelmesi için */
+    flex-wrap: wrap; /* Küçük ekranlarda alt alta gelsin */
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     padding: 20px 25px;
 }
 
+/* Kategori ekleme formu */
 .category-form {
     display: flex;
     gap: 10px;
@@ -83,6 +88,7 @@ body {
     transition: background-color 0.2s;
 }
 
+/* Açık gri buton */
 .btn-light {
     background-color: var(--light-gray);
     color: var(--text-color);
@@ -90,12 +96,14 @@ body {
 }
 .btn-light:hover { background-color: #d3d9df; }
 
+/* Gri buton */
 .btn-secondary {
     background-color: var(--secondary-color);
     color: var(--white-color);
 }
 .btn-secondary:hover { background-color: #5c636a; }
 
+/* Mavi buton */
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--white-color);
@@ -112,7 +120,7 @@ body {
     border-collapse: collapse;
 }
 
-/* Tablo Başlığı (Sadece büyük ekranda görünür) */
+/* Tablo başlık satırı (masaüstü görünüm) */
 .table-header {
     display: grid;
     grid-template-columns: 1fr 2fr 1.5fr 1fr 1fr 1.2fr;
@@ -129,10 +137,10 @@ body {
     text-align: left;
 }
 
-/* Tablo Satırı */
+/* Tablo satırları */
 .table-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 1.5fr 1fr 1fr 1.2fr; /* Başlıkla aynı kolon yapısı */
+    grid-template-columns: 1fr 2fr 1.5fr 1fr 1fr 1.2fr;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
 }
@@ -146,18 +154,20 @@ body {
     text-align: left;
 }
 
+/* İşlemler (sil-düzenle) kolonunun stil ayarı */
 .table-cell[data-label="İşlemler"] {
     display: flex;
     gap: 10px;
 }
 
+/* Ürün görseli */
 .product-image {
     max-width: 80px;
     height: auto;
     border-radius: 4px;
 }
 
-/* İkon Butonları */
+/* İkon butonları */
 .btn-icon {
     width: 36px;
     height: 36px;
@@ -173,10 +183,11 @@ body {
 }
 .btn-icon:hover { opacity: 0.8; }
 
+/* Düzenle ve Sil renkleri */
 .btn-edit { background-color: var(--warning-color); }
 .btn-delete { background-color: var(--danger-color); }
 
-/* --- Alert Mesajları --- */
+/* === Alert Mesajları === */
 .alert {
     padding: 12px 16px;
     margin-bottom: 20px;
@@ -184,25 +195,28 @@ body {
     font-weight: 500;
 }
 
+/* Başarılı */
 .alert-success {
     background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 
+/* Hata */
 .alert-error {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
 
+/* Bilgilendirme */
 .alert-info {
     background-color: #d1ecf1;
     color: #0c5460;
     border: 1px solid #bee5eb;
 }
 
-/* === KATEGORİ YÖNETİMİ BÖLÜMÜ === */
+/* === Kategori Yönetimi === */
 .category-management {
     padding: 20px 25px;
     border-top: 2px solid var(--border-color);
@@ -210,6 +224,7 @@ body {
     background-color: var(--light-color);
 }
 
+/* Bölüm başlıkları */
 .section-title {
     font-size: 18px;
     font-weight: 600;
@@ -218,10 +233,6 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.section-title i {
-    color: var(--primary-color);
 }
 
 .category-list {
@@ -248,54 +259,34 @@ body {
     transform: translateY(-2px);
 }
 
-.category-name {
-    font-weight: 500;
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.category-name i {
-    color: var(--primary-color);
-    font-size: 14px;
-}
-
-/* Küçük silme butonu - Kategori için */
+/* Küçük silme butonu */
 .btn-delete-small {
     width: 30px;
     height: 30px;
     padding: 0;
     background-color: var(--danger-color);
 }
-
-.btn-delete-small:hover {
-    background-color: #bb2d3b;
-}
+.btn-delete-small:hover { background-color: #bb2d3b; }
 
 
-/* === RESPONSIVE DÜZENLEME (Mobil Uyum) === */
-
-/* 768px altındaki ekranlar için */
+/* === Mobil Uyumlu Tasarım === */
 @media (max-width: 768px) {
     .controls {
-        flex-direction: column; /* Kontrolleri alt alta sırala */
-        align-items: stretch; /* Elementleri tam genişliğe yay */
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .category-form, .page-actions {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr; /* Butonları/inputları alt alta getir */
+        grid-template-columns: 1fr; /* Her şeyi alt alta getir */
     }
 
-    /* Tabloyu kart görünümüne geçir */
-    .table-header {
-        display: none; /* Masaüstü başlığını gizle */
-    }
+    /* Masaüstü tablosunu gizleyip mobil kart görünümüne geçiyoruz */
+    .table-header { display: none; }
 
     .table-row {
-        grid-template-columns: 1fr; /* Her hücre tam genişlikte */
+        grid-template-columns: 1fr;
         border: 1px solid var(--border-color);
         border-radius: 8px;
         padding: 15px;
@@ -305,49 +296,22 @@ body {
     
     .table-cell {
         display: flex;
-        justify-content: space-between; /* Etiketi sola, içeriği sağa yasla */
+        justify-content: space-between;
         align-items: center;
         padding: 10px 0;
-        text-align: right; /* İçeriği sağa yasla */
+        text-align: right;
         border-bottom: 1px dashed var(--border-color);
     }
     
-    .table-cell:last-child {
-        border-bottom: none;
-    }
+    .table-cell:last-child { border-bottom: none; }
 
-    /* data-label ile gizli başlıkları göster */
+    /* data-label ile mobilde başlık ekliyoruz */
     .table-cell::before {
-        content: attr(data-label); /* data-label içeriğini al */
+        content: attr(data-label);
         font-weight: 600;
-        text-align: left;
         margin-right: 20px;
         color: #333;
     }
 
-    /* Resim ve İşlemler hücresini ayarla */
-    .table-cell[data-label="Ürün Resmi"] {
-        justify-content: center; /* Resmi ortala */
-    }
-    .table-cell[data-label="Ürün Resmi"]::before {
-        display: none; /* "Ürün Resmi" yazısını gizle */
-    }
-
-    .table-cell[data-label="İşlemler"] {
-        justify-content: flex-end; /* Butonları sağa yasla */
-    }
-
-    /* Kategori yönetimi mobil uyumu */
-    .category-management {
-        padding: 15px;
-    }
-
-    .category-list {
-        flex-direction: column; /* Kategorileri alt alta sırala */
-    }
-
-    .category-item {
-        min-width: 100%; /* Tam genişlik */
-        width: 100%;
-    }
+    .table-cell[data-label="Ürün Resmi"]::before { display: none; }
 }

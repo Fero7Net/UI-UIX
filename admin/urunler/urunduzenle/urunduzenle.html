@@ -1,62 +1,77 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html> <!-- HTML5 belgesi olduğunu belirtir -->
+<html lang="tr"> <!-- Sayfanın dili Türkçe olarak ayarlanır -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürün Düzenleme Formu</title>
-    <link rel="stylesheet" href="urunduzenle.css">
+    <meta charset="UTF-8"> <!-- Türkçe karakter uyumu sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyumlu yapar -->
+    <title>Ürün Düzenleme Formu</title> <!-- Sekmede görünen başlık -->
+    <link rel="stylesheet" href="urunduzenle.css"> <!-- Harici CSS dosyasını dahil eder -->
 </head>
 <body>
 
+    <!-- Formun ana konteyneri -->
     <div class="form-container">
-        <form action="#" method="post">
+        <!-- Form başlangıcı -->
+        <form action="#" method="post"> <!-- action="#" henüz backend bağlantısı olmadığını gösterir -->
             
+            <!-- Ürün Adı -->
             <div class="form-group">
                 <label for="product-name">Ürün Adı</label>
                 <input type="text" id="product-name" name="product-name" value="Akıllı Telefon Model X">
             </div>
 
+            <!-- Kategori Seçimi -->
             <div class="form-group">
                 <label for="category">Kategori</label>
                 <select id="category" name="category">
-                    <option value="elektronik" selected>Elektronik</option>
+                    <option value="elektronik" selected>Elektronik</option> <!-- Varsayılan seçili -->
                     <option value="giyim">Giyim</option>
                     <option value="ev-yasam">Ev & Yaşam</option>
                 </select>
             </div>
 
+            <!-- Fiyat Girişi -->
             <div class="form-group">
                 <label for="price">Fiyat</label>
                 <input type="text" id="price" name="price" value="15.000 TL">
             </div>
 
+            <!-- Ürün Görseli Alanı -->
             <div class="form-group">
                 <label>Ürün Resmi</label>
                 
-                <div class="image-section">
+                <div class="image-section"> <!-- Resim bölümü ve dosya yükleme alanı -->
+                    
+                    <!-- Mevcut görüntü -->
                     <div class="image-preview">
                         <img src="https://via.placeholder.com/150" alt="Mevcut Ürün Resmi">
                         <span>Mevcut Ürün Resmi</span>
                     </div>
 
+                    <!-- Yeni resim seçme alanı -->
                     <div class="file-upload-area">
-                        <label for="product-image" class="file-upload-label">Mevcut resmi değiştirmek için yeni bir dosya seçin:</label>
+                        <label for="product-image" class="file-upload-label">
+                            Mevcut resmi değiştirmek için yeni bir dosya seçin:
+                        </label>
+
                         <div class="file-input-wrapper">
-                            <input type="file" id="product-image" name="product-image">
+                            <input type="file" id="product-image" name="product-image"> <!-- Yeni resim girişi -->
                         </div>
                     </div>
+
                 </div>
             </div>
 
+            <!-- Form Butonları -->
             <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Güncelle</button>
-                <button onclick="location.href='../urunler/urunler.html'" type="button" class="btn btn-secondary">İptal</button>
+                <button type="submit" class="btn btn-primary">Güncelle</button> <!-- Form gönderme -->
+                <button onclick="location.href='../urunler/urunler.html'" type="button" class="btn btn-secondary">İptal</button> <!-- İptal butonu -->
             </div>
 
         </form>
 
+        <!-- Alt Bilgi Alanı -->
         <div class="form-footer">
-            <a href="../../adminindex.html">Anasayfaya Dön</a>
+            <a href="../../adminindex.html">Anasayfaya Dön</a> <!-- Geri dönüş linki -->
         </div>
     </div>
 

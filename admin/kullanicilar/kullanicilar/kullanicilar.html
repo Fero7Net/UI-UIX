@@ -1,23 +1,34 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html> <!-- HTML5 belgesi olduğunu belirtir -->
+<html lang="tr"> <!-- Sayfa Türkçe dilinde olduğunu belirtir -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kullanıcı Yönetimi</title>
-    <link rel="stylesheet" href="kullanicilar.css">
+    <meta charset="UTF-8"> <!-- Türkçe karakter desteği -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyum -->
+    <title>Kullanıcı Yönetimi</title> <!-- Sekme başlığı -->
+    <link rel="stylesheet" href="kullanicilar.css"> <!-- Harici CSS dosyası -->
 </head>
 <body>
 
+    <!-- Sayfanın genel kapsayıcı alanı -->
     <div class="container">
+        
+        <!-- Kullanıcı panel kartı -->
         <div class="user-management-card">
             
+            <!-- Üst başlık kısmı -->
             <header class="card-header">
-                <h1>Kullanıcı Yönetimi</h1>
+                <h1>Kullanıcı Yönetimi</h1> <!-- Sayfa başlığı -->
+                
+                <!-- Anasayfa butonu -->
                 <a href="../../adminindex.html" class="btn btn-secondary">Anasayfaya Dön</a>
+                
+                <!-- Yeni kullanıcı ekleme sayfasına yönlendirme -->
                 <a href="../kullaniciekle/kullaniciekle.html" class="btn btn-green">Yeni Kullanıcı Ekle</a>
             </header>
             
+            <!-- Tabloyu saran kapsayıcı (responsive için) -->
             <div class="table-wrapper">
+                
+                <!-- Kullanıcı tablosu -->
                 <table class="user-table">
                     <thead>
                         <tr>
@@ -25,11 +36,11 @@
                             <th>SOYAD</th>
                             <th>E-POSTA</th>
                             <th>ŞİFRE</th>
-                            <th>İŞLEMLER</th>
+                            <th>İŞLEMLER</th> <!-- Düzenle / Sil gibi butonlar gelecek -->
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        <!-- JavaScript ile kullanıcılar bu alana eklenecek -->
                     </tbody>
                 </table>
             </div>
@@ -37,6 +48,7 @@
         </div>
     </div>
 
+<!-- Kullanıcılar ile ilgili işlemleri yöneten JS dosyası -->
 <script src="kullanicilar.js"></script>
 </body>
 </html>
